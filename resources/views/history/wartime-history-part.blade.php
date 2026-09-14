@@ -16,25 +16,7 @@
 
     <section class="case-body" id="paper">
         <div class="container">
-            @foreach ($blocks as $block)
-                @if ($block['type'] === 'heading')
-                    @if (! empty($block['id']))
-                        <h2 id="{{ $block['id'] }}">{{ $block['text'] }}</h2>
-                    @else
-                        <h2>{{ $block['text'] }}</h2>
-                    @endif
-                @elseif ($block['type'] === 'list')
-                    <ul class="article-list">
-                        @foreach ($block['items'] as $item)
-                            <li>{{ $item }}</li>
-                        @endforeach
-                    </ul>
-                @elseif ($block['type'] === 'note')
-                    <p class="hearing-note">{{ $block['text'] }}</p>
-                @else
-                    <p>{{ $block['text'] }}</p>
-                @endif
-            @endforeach
+            <x-article-blocks :blocks="$blocks" />
 
             <div class="mt-5">
                 <a class="btn btn-copper" href="{{ $continue['href'] }}">{{ $continue['label'] }}</a>

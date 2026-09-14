@@ -31,26 +31,7 @@
 
     <section class="case-body" id="paper">
         <div class="container">
-            @foreach ($blocks as $block)
-                @if ($block['type'] === 'heading')
-                    <h2>{{ $block['text'] }}</h2>
-                @elseif ($block['type'] === 'figure')
-                    <figure class="article-figure">
-                        <img src="{{ $image }}" alt="{{ $caption }}" width="600" height="355">
-                        <figcaption>{{ $caption }}</figcaption>
-                    </figure>
-                @elseif ($block['type'] === 'list')
-                    <ul class="article-list">
-                        @foreach ($block['items'] as $item)
-                            <li>{{ $item }}</li>
-                        @endforeach
-                    </ul>
-                @elseif ($block['type'] === 'note')
-                    <p class="hearing-note">{{ $block['text'] }}</p>
-                @else
-                    <p>{{ $block['text'] }}</p>
-                @endif
-            @endforeach
+            <x-article-blocks :blocks="$blocks" />
         </div>
     </section>
 

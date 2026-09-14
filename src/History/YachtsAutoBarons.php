@@ -30,7 +30,7 @@ final class YachtsAutoBarons
     }
 
     /**
-     * @return list<array{type: string, text?: string, items?: list<string>}>
+     * @return list<array{type: string, text?: string, src?: string, caption?: string, items?: list<string>}>
      */
     public static function blocks(): array
     {
@@ -77,6 +77,8 @@ final class YachtsAutoBarons
             ],
             [
                 'type' => 'figure',
+                'src' => self::imagePath(),
+                'caption' => self::imageCaption(),
             ],
             [
                 'type' => 'p',

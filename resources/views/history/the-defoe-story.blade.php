@@ -64,57 +64,7 @@
 
     <section class="case-body" id="paper">
         <div class="container">
-            @foreach ($blocks as $block)
-                @if ($block['type'] === 'heading')
-                    <div class="tag">pp. {{ $block['pages'] }}</div>
-                    <h2 id="{{ $block['id'] }}">{{ $block['text'] }}</h2>
-                @elseif ($block['type'] === 'figure')
-                    <figure class="article-figure">
-                        @if (! empty($block['src']))
-                            <img src="{{ $block['src'] }}" alt="{{ $block['caption'] }}">
-                        @else
-                            <div class="article-figure-placeholder" role="img" aria-label="{{ $block['caption'] }} Photograph not posted yet.">
-                                {{ $block['placeholder'] }}
-                            </div>
-                        @endif
-                        <figcaption>{{ $block['caption'] }}</figcaption>
-                    </figure>
-                @elseif ($block['type'] === 'figures')
-                    <div class="article-figures">
-                        @foreach ($block['items'] as $item)
-                            <figure class="article-figure">
-                                @if (! empty($item['src']))
-                                    <img src="{{ $item['src'] }}" alt="{{ $item['caption'] }}">
-                                @else
-                                    <div class="article-figure-placeholder" role="img" aria-label="{{ $item['caption'] }} Photograph not posted yet.">
-                                        {{ $item['placeholder'] }}
-                                    </div>
-                                @endif
-                                <figcaption>{{ $item['caption'] }}</figcaption>
-                            </figure>
-                        @endforeach
-                    </div>
-                @elseif ($block['type'] === 'list')
-                    <ul class="article-list">
-                        @foreach ($block['items'] as $item)
-                            <li>{{ $item }}</li>
-                        @endforeach
-                    </ul>
-                @elseif ($block['type'] === 'signatories')
-                    <div class="row gy-4 brochure-signatories">
-                        @foreach ($block['items'] as $signatory)
-                            <div class="col-md-6">
-                                <p>{{ $signatory['name'] }}</p>
-                                <p class="tag">{{ $signatory['title'] }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                @elseif ($block['type'] === 'note')
-                    <p class="hearing-note">{{ $block['text'] }}</p>
-                @else
-                    <p>{{ $block['text'] }}</p>
-                @endif
-            @endforeach
+            <x-article-blocks :blocks="$blocks" />
         </div>
     </section>
 

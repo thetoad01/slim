@@ -31,18 +31,7 @@
 
     <section class="case-body" id="paper">
         <div class="container">
-            @foreach ($clipping['blocks'] as $block)
-                @if ($block['type'] === 'figure')
-                    <figure class="article-figure{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">
-                        <img src="{{ $block['src'] }}" alt="{{ $block['caption'] }}">
-                        <figcaption>{{ $block['caption'] }}</figcaption>
-                    </figure>
-                @elseif ($block['type'] === 'quote' || $block['type'] === 'note')
-                    <p class="hearing-note">{{ $block['text'] }}</p>
-                @else
-                    <p>{{ $block['text'] }}</p>
-                @endif
-            @endforeach
+            <x-article-blocks :blocks="$clipping['blocks']" />
         </div>
     </section>
 

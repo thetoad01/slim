@@ -63,29 +63,7 @@
 
     <section class="case-body" id="paper">
         <div class="container">
-            @foreach ($blocks as $block)
-                @if ($block['type'] === 'heading' && ($block['level'] ?? 2) === 3)
-                    <h3 id="{{ $block['id'] }}">{{ $block['text'] }}</h3>
-                @elseif ($block['type'] === 'heading')
-                    <h2 id="{{ $block['id'] }}">{{ $block['text'] }}</h2>
-                @elseif ($block['type'] === 'figure')
-                    <figure class="article-figure{{ empty($block['class']) ? '' : ' ' . $block['class'] }}"@if (! empty($block['id'])) id="{{ $block['id'] }}"@endif>
-                        <img src="{{ $block['src'] }}" alt="{{ $block['caption'] }}">
-                        <figcaption>{{ $block['caption'] }}</figcaption>
-                    </figure>
-                @elseif ($block['type'] === 'figures')
-                    <div class="article-figures{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">
-                        @foreach ($block['items'] as $item)
-                            <figure class="article-figure"@if (! empty($item['id'])) id="{{ $item['id'] }}"@endif>
-                                <img src="{{ $item['src'] }}" alt="{{ $item['caption'] }}">
-                                <figcaption>{{ $item['caption'] }}</figcaption>
-                            </figure>
-                        @endforeach
-                    </div>
-                @else
-                    <p>{{ $block['text'] }}</p>
-                @endif
-            @endforeach
+            <x-article-blocks :blocks="$blocks" />
         </div>
     </section>
 

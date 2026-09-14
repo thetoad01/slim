@@ -16,33 +16,7 @@
 
     <section class="case-body" id="transcript">
         <div class="container">
-            @php $inList = false; @endphp
-            @foreach ($blocks as $block)
-                @if ($block['type'] === 'li')
-                    @if (! $inList)
-                        <ul class="article-list">
-                        @php $inList = true; @endphp
-                    @endif
-                    <li>{{ $block['text'] }}</li>
-                @else
-                    @if ($inList)
-                        </ul>
-                        @php $inList = false; @endphp
-                    @endif
-                    @if ($block['type'] === 'heading')
-                        <h2>{{ $block['text'] }}</h2>
-                    @elseif ($block['type'] === 'note')
-                        <p class="hearing-note">{{ $block['text'] }}</p>
-                    @elseif ($block['type'] === 'speech')
-                        <p><span class="hearing-speaker">{{ $block['speaker'] }}.</span> {{ $block['text'] }}</p>
-                    @else
-                        <p>{{ $block['text'] }}</p>
-                    @endif
-                @endif
-            @endforeach
-            @if ($inList)
-                </ul>
-            @endif
+            <x-article-blocks :blocks="$blocks" />
         </div>
     </section>
 

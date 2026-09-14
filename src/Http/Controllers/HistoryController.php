@@ -62,8 +62,6 @@ final class HistoryController extends Controller
                 'byline' => YachtsAutoBarons::byline(),
                 'presented' => YachtsAutoBarons::presented(),
                 'sourceUrl' => YachtsAutoBarons::sourceUrl(),
-                'image' => YachtsAutoBarons::imagePath(),
-                'caption' => YachtsAutoBarons::imageCaption(),
                 'blocks' => YachtsAutoBarons::blocks(),
             ]);
         }
