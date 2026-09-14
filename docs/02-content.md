@@ -4,6 +4,22 @@ The public site is the Defoe Shipbuilding record. It is not a software portfolio
 
 How to run the app is in [01-using-slim.md](01-using-slim.md). Public URLs, live and planned, are in [03-page-tree.md](03-page-tree.md).
 
+## What’s next
+
+Paths: [03-page-tree.md](03-page-tree.md).
+
+**Continue first**
+- Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
+
+**Rooms that exist, still empty or incomplete**
+- Photographs (`02.1`) — stub
+- *The Rollover* (`02.3`) — stub; no issues posted
+- Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
+
+**New pages**
+- `01.5` Research, Development, and Construction of 57 Foot Plastic Boats
+- `02.5.2` SS Ernest R. Breech naming (Miscellaneous)
+
 Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hull) can be pages later that pull from these holdings. Do not invent rooms for subjects we do not yet hold as a stack of paper or pictures.
 
 ## Holdings
@@ -96,7 +112,7 @@ Content is PHP data, not a database.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
 - **`src/Shipbuild/Clippings.php`** — Hull 02.2. News clippings listing and article pages.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
-- **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Cover, inside cover, and officer bios posted; remaining sections not posted yet.
+- **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Posted.
 - **`src/Shipbuild/FamilyPapers.php`** — Family room listings.
 - **`src/Shipbuild/InvestigationWarEffort.php`** — Harry Defoe’s 1943 hearings (02.4.1). Transcript body is in `Testimony606615.php` and `Testimony618628.php`.
 - Home copy is in `resources/views/home.blade.php`.

@@ -34,16 +34,28 @@
             <x-article-figure :figure="$block" />
         @elseif (($block['type'] ?? '') === 'figures')
             <div class="article-figures{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">
-                @foreach ($block['items'] as $item)
-                    <x-article-figure :figure="$item" />
-                @endforeach
+                <div class="row row-cols-1 row-cols-md-2 g-3">
+                    @foreach ($block['items'] as $item)
+                        <div class="col">
+                            <x-article-figure :figure="$item" />
+                        </div>
+                    @endforeach
+                </div>
             </div>
         @elseif (($block['type'] ?? '') === 'list')
-            <ul class="article-list">
-                @foreach ($block['items'] as $item)
-                    <li>{{ $item }}</li>
-                @endforeach
-            </ul>
+            @if (($block['class'] ?? '') === 'columns-2')
+                <ul class="article-list list-unstyled row row-cols-1 row-cols-md-2 gy-1 gx-4 ps-0">
+                    @foreach ($block['items'] as $item)
+                        <li class="col mb-0">{{ $item }}</li>
+                    @endforeach
+                </ul>
+            @else
+                <ul class="article-list{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">
+                    @foreach ($block['items'] as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+            @endif
         @elseif (($block['type'] ?? '') === 'signatories')
             <div class="row gy-4 brochure-signatories">
                 @foreach ($block['items'] as $signatory)

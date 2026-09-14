@@ -57,7 +57,7 @@ Put `src` and `caption` on the block. Omit `src` (or leave it empty) to show the
 
 ### Figure group
 
-Side-by-side photographs. Each item uses the same fields as `figure`.
+Two photographs per row from the Bootstrap `md` breakpoint; one column on smaller screens. Each item uses the same fields as `figure`.
 
 ```php
 [
@@ -77,6 +77,7 @@ Prefer this when the list is one unit in the source.
 ```php
 [
     'type' => 'list',
+    'class' => 'columns-2',  // optional; Bootstrap row-cols, one column then two from md
     'items' => [
         '58-173\' Submarine Chasers',
         '17-307\' Destroyer Escort Vessels',

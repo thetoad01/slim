@@ -1,93 +1,106 @@
 # Page tree
 
-Living map of public URLs. When you add or rename a page, add or change a row here in the same change.
+Public URLs. Add or change a row here in the same change as the route.
 
-- How to run the app and add a route: [01-using-slim.md](01-using-slim.md)
+- Run the app: [01-using-slim.md](01-using-slim.md)
 - What belongs on a page: [02-content.md](02-content.md)
 
-Do not put holdings rules in this file. Do not put Slim setup in this file.
+## Home
 
-## Live
+| Path | Page |
+|------|------|
+| `/` | Home |
+| `/#yard` | The yard |
+| `/#contact` | Write |
+| `POST /contact` | Contact submit. Redirects to `/#contact`. Does not send mail yet. |
 
-| Path | Page | Notes |
-|------|------|--------|
-| `/` | Home | Hero, split, contact form |
-| `/#yard` | The yard | Overview and 1905–1976 timeline (on home) |
-| `/#contact` | Write | Contact form (on home) |
-| `/history` | History index | Hull 01. All four articles are linked |
-| `/history/the-defoe-story` | The Defoe story | Hull 01.1. Company brochure posted through the back cover |
-| `/shipbuild/defoe-story` | The Defoe story (legacy) | 301 to `/history/the-defoe-story` |
-| `/history/swanson` | History by F. A. Swanson | Hull 01.2. The 1964 SNAME paper; aerial of the yard |
-| `/shipbuild/swanson-history` | History by F. A. Swanson (legacy) | 301 to `/history/swanson` |
-| `/history/yachts-auto-barons` | Yachts of the Auto Barons | Hull 01.3. Polacsek; Tonnancour vol. 2 |
-| `/shipbuild/yachts-auto-barons` | Yachts of the Auto Barons (legacy) | 301 to `/history/yachts-auto-barons` |
-| `/history/wartime-history` | Wartime History of the Offices of the Supervisor of Shipbuilding, USN | Hull 01.4. Patch, 27 May 1946. Contents listing; opener and Parts I–IX posted; exhibits listed, not posted |
-| `/history/wartime-history/preface` | Preface and Introduction | Hull 01.4 opener. Printed pp. I–IV |
-| `/history/wartime-history/part-i` | Part I — Contractors’ workload | Hull 01.4. Printed pp. 1–10. Yards are headings, not URLs |
-| `/history/wartime-history/part-ii` | Part II — Organization and development | Hull 01.4. Printed pp. 11–27. Periods and offices are headings, not URLs |
-| `/history/wartime-history/part-iii` | Part III — Organization and administration | Hull 01.4. Printed pp. 31–39. TOC leaves are headings, not URLs |
-| `/history/wartime-history/part-iv` | Part IV — Inspection | Hull 01.4. Printed pp. 40–44. TOC leaves are headings, not URLs |
-| `/history/wartime-history/part-v` | Part V — Facilities | Hull 01.4. Printed pp. 45–50. **SCAN GAP:** DE paragraph cut at “Three or four afloat positions…”. Restore from 1946 scans. See [02-content.md](02-content.md). |
-| `/history/wartime-history/part-vi` | Part VI — Production control and expediting | Hull 01.4. Printed pp. 51–58. TOC leaves are headings, not URLs |
-| `/history/wartime-history/part-vii` | Part VII — Contracts and costs | Hull 01.4. Printed pp. 59–61. TOC leaves are headings, not URLs |
-| `/history/wartime-history/part-viii` | Part VIII — Miscellaneous | Hull 01.4. Printed pp. 62–70. TOC leaves are headings, not URLs |
-| `/history/wartime-history/part-ix` | Part IX — Conclusion | Hull 01.4. Printed p. 71. Continue returns to the report contents |
-| `/shipbuild/offices-supervisor/wartime-history` | Wartime history (legacy) | 301 to `/history/wartime-history` |
-| `/shipbuild/offices-supervisor/table-of-contents` | Contents (legacy) | 301 to `/history/wartime-history#contents` |
-| `/shipbuild/offices-supervisor/preface` | Preface (legacy) | 301 to `/history/wartime-history/preface` |
-| `/shipbuild/offices-supervisor/introduction` | Introduction (legacy) | 301 to `/history/wartime-history/preface#introduction` |
-| `/shipbuild/offices-supervisor/part-1` | Part I (legacy) | 301 to `/history/wartime-history/part-i` |
-| `/shipbuild/offices-supervisor/part-2` | Part II (legacy) | 301 to `/history/wartime-history/part-ii` |
-| `/shipbuild/offices-supervisor/part-3` | Part III (legacy) | 301 to `/history/wartime-history/part-iii` |
-| `/shipbuild/offices-supervisor/part-4` | Part IV (legacy) | 301 to `/history/wartime-history/part-iv` |
-| `/shipbuild/offices-supervisor/part-5` | Part V (legacy) | 301 to `/history/wartime-history/part-v` |
-| `/shipbuild/offices-supervisor/part-6` | Part VI (legacy) | 301 to `/history/wartime-history/part-vi` |
-| `/shipbuild/offices-supervisor/part-7` | Part VII (legacy) | 301 to `/history/wartime-history/part-vii` |
-| `/shipbuild/offices-supervisor/part-8` | Part VIII (legacy) | 301 to `/history/wartime-history/part-viii` |
-| `/shipbuild/offices-supervisor/part-9` | Part IX (legacy) | 301 to `/history/wartime-history/part-ix` |
-| `/shipbuild` | Archive index | Hull 02. All six rooms are linked |
-| `/shipbuild/photographs` | Photographs | Hull 02.1. Stub landing; no photographs posted yet |
-| `/shipbuild/gallery` | Photographs (legacy) | 301 to `/shipbuild/photographs` |
-| `/shipbuild/clippings` | News clippings | Hull 02.2. Listing; 02.2.1–02.2.3 are linked |
-| `/shipbuild/clippings/torpedo-chasers` | Five Torpedo Chasers for Government | Hull 02.2.1. Clipping, 1917; transcript from the scan |
-| `/shipbuild/clippings/lakefaring-history` | Our Lakefaring History | Hull 02.2.2. *The Saginaw News*, 16 January 1999 |
-| `/shipbuild/clippings/savitar-comes-home` | ‘Savitar’ Comes Home | Hull 02.2.3. *The Bay City Times*, 1 March 2006 |
-| `/shipbuild/inthenews` | News clippings (legacy) | 301 to `/shipbuild/clippings` |
-| `/shipbuild/inthenews/1917-torpedo-chasers` | Torpedo chasers (legacy) | 301 to `/shipbuild/clippings/torpedo-chasers` |
-| `/shipbuild/inthenews/lakefaring-history` | Lakefaring (legacy) | 301 to `/shipbuild/clippings/lakefaring-history` |
-| `/shipbuild/inthenews/savitar-comes-home` | Savitar (legacy) | 301 to `/shipbuild/clippings/savitar-comes-home` |
-| `/shipbuild/the-rollover` | *The Rollover* | Hull 02.3. Stub landing; no issues posted yet |
-| `/shipbuild/the-defoe-rollover` | *The Rollover* (legacy) | 301 to `/shipbuild/the-rollover` |
-| `/shipbuild/family` | Family papers | Hull 02.4. Listing; 02.4.1 is linked |
-| `/shipbuild/family/investigation-war-effort` | Investigation of the Progress of the War Effort | Hull 02.4.1. Harry Defoe’s 1943 Naval Affairs testimony |
-| `/shipbuild/family/investigation-war-effort/testimony/606-615` | Testimony, pp. 606–615 | Hull 02.4.1, section 1 |
-| `/shipbuild/family/investigation-war-effort/testimony/618-628` | Testimony, pp. 618–628 | Hull 02.4.1, section 2 |
-| `/shipbuild/investigation-war-effort` | Hearings (legacy) | 301 to `/shipbuild/family/investigation-war-effort` |
-| `/shipbuild/investigation-war-effort/testimony/{pages}` | Testimony (legacy) | 301 to `/shipbuild/family/investigation-war-effort/testimony/{pages}` |
-| `/shipbuild/miscellaneous` | Miscellaneous | Hull 02.5. Listing; 02.5.1 is linked |
-| `/shipbuild/miscellaneous/perth-commendation` | HMAS Perth Commendation | Hull 02.5.1. 1969 pamphlet; cover, inside cover, and officer bios posted |
-| `/shipbuild/perth-commendation` | HMAS Perth Commendation (legacy) | 301 to `/shipbuild/miscellaneous/perth-commendation` |
-| `/shipbuild/related-links` | Related links | Hull 02.6. Index of external yards, archives, and ship pages |
-| `/shipbuild/links` | Related links (legacy) | 301 to `/shipbuild/related-links` |
-| `POST /contact` | Contact submit | Redirects to `/#contact`. Does not send mail yet |
+## History
+
+Hull 01. Indexes stay in the nav; children do not.
+
+| Path | Hull | Page | Notes |
+|------|------|------|--------|
+| `/history` | 01 | History index | All four articles linked |
+| `/history/the-defoe-story` | 01.1 | The Defoe story | Brochure through the back cover |
+| `/history/swanson` | 01.2 | History by F. A. Swanson | 1964 SNAME paper |
+| `/history/yachts-auto-barons` | 01.3 | Yachts of the Auto Barons | Polacsek; Tonnancour vol. 2 |
+| `/history/wartime-history` | 01.4 | Wartime History of the Offices of the Supervisor of Shipbuilding, USN | Patch, 27 May 1946. Exhibits listed, not posted |
+| `/history/wartime-history/preface` | 01.4 | Preface and Introduction | pp. I–IV |
+| `/history/wartime-history/part-i` | 01.4 | Part I | pp. 1–10 |
+| `/history/wartime-history/part-ii` | 01.4 | Part II | pp. 11–27 |
+| `/history/wartime-history/part-iii` | 01.4 | Part III | pp. 31–39 |
+| `/history/wartime-history/part-iv` | 01.4 | Part IV | pp. 40–44 |
+| `/history/wartime-history/part-v` | 01.4 | Part V | pp. 45–50. Scan gap: restore DE paragraph from the 1946 scans. See [02-content.md](02-content.md) |
+| `/history/wartime-history/part-vi` | 01.4 | Part VI | pp. 51–58 |
+| `/history/wartime-history/part-vii` | 01.4 | Part VII | pp. 59–61 |
+| `/history/wartime-history/part-viii` | 01.4 | Part VIII | pp. 62–70 |
+| `/history/wartime-history/part-ix` | 01.4 | Part IX | p. 71 |
+
+## Archive
+
+Hull 02. Related links stays last.
+
+| Path | Hull | Page | Notes |
+|------|------|------|--------|
+| `/shipbuild` | 02 | Archive index | All six rooms linked |
+| `/shipbuild/photographs` | 02.1 | Photographs | Stub |
+| `/shipbuild/clippings` | 02.2 | News clippings | 02.2.1–02.2.3 linked |
+| `/shipbuild/clippings/torpedo-chasers` | 02.2.1 | Five Torpedo Chasers for Government | 1917 |
+| `/shipbuild/clippings/lakefaring-history` | 02.2.2 | Our Lakefaring History | *The Saginaw News*, 16 January 1999 |
+| `/shipbuild/clippings/savitar-comes-home` | 02.2.3 | ‘Savitar’ Comes Home | *The Bay City Times*, 1 March 2006 |
+| `/shipbuild/the-rollover` | 02.3 | *The Rollover* | Stub. No issues posted |
+| `/shipbuild/family` | 02.4 | Family papers | 02.4.1 linked |
+| `/shipbuild/family/investigation-war-effort` | 02.4.1 | Investigation of the Progress of the War Effort | Harry Defoe, 1943 |
+| `/shipbuild/family/investigation-war-effort/testimony/606-615` | 02.4.1 | Testimony, pp. 606–615 | |
+| `/shipbuild/family/investigation-war-effort/testimony/618-628` | 02.4.1 | Testimony, pp. 618–628 | |
+| `/shipbuild/miscellaneous` | 02.5 | Miscellaneous | 02.5.1 linked |
+| `/shipbuild/miscellaneous/perth-commendation` | 02.5.1 | HMAS Perth Commendation | 1969 pamphlet posted |
+| `/shipbuild/related-links` | 02.6 | Related links | Pointers only |
 
 ## Planned
 
-Each History article gets its own landing. Indexes stay in the nav; children do not.
+Move a row to History or Archive when it ships. Add `01.5` or a new Archive room in hull order.
 
-When a planned row ships, move it to **Live**. When you add `01.5` or insert an Archive room (E awards before Misc), add the path here in hull order. Related links stays last under `/shipbuild`.
+| Path | Hull | Page | Notes |
+|------|------|------|--------|
+| `/history/…` | 01.5 | 57 Foot Plastic Boats | Anderson / Thomas J. Defoe. 301 from `/shipbuild/plastic-boats` |
+| `/shipbuild/miscellaneous/…` | 02.5.2 | SS Ernest R. Breech naming | 301 from `/shipbuild/breech-naming` |
+
+## Redirects
+
+Old `/shipbuild` paths. 301 to the row in History or Archive.
+
+| From | To |
+|------|----|
+| `/shipbuild/defoe-story` | `/history/the-defoe-story` |
+| `/shipbuild/swanson-history` | `/history/swanson` |
+| `/shipbuild/yachts-auto-barons` | `/history/yachts-auto-barons` |
+| `/shipbuild/offices-supervisor/wartime-history` | `/history/wartime-history` |
+| `/shipbuild/offices-supervisor/table-of-contents` | `/history/wartime-history#contents` |
+| `/shipbuild/offices-supervisor/preface` | `/history/wartime-history/preface` |
+| `/shipbuild/offices-supervisor/introduction` | `/history/wartime-history/preface#introduction` |
+| `/shipbuild/offices-supervisor/part-1` … `part-9` | `/history/wartime-history/part-i` … `part-ix` |
+| `/shipbuild/gallery` | `/shipbuild/photographs` |
+| `/shipbuild/inthenews` | `/shipbuild/clippings` |
+| `/shipbuild/inthenews/1917-torpedo-chasers` | `/shipbuild/clippings/torpedo-chasers` |
+| `/shipbuild/inthenews/lakefaring-history` | `/shipbuild/clippings/lakefaring-history` |
+| `/shipbuild/inthenews/savitar-comes-home` | `/shipbuild/clippings/savitar-comes-home` |
+| `/shipbuild/the-defoe-rollover` | `/shipbuild/the-rollover` |
+| `/shipbuild/investigation-war-effort` | `/shipbuild/family/investigation-war-effort` |
+| `/shipbuild/investigation-war-effort/testimony/{pages}` | `/shipbuild/family/investigation-war-effort/testimony/{pages}` |
+| `/shipbuild/perth-commendation` | `/shipbuild/miscellaneous/perth-commendation` |
+| `/shipbuild/links` | `/shipbuild/related-links` |
 
 ## Media
 
-Originals and scans live under `public/` when a room is fitted out. Record the folder when it exists. Do not place a folder on a live index path (`public/history/` would hide `/history`).
+Folders under `public/` when a room is fitted out. Do not put a folder on a live index path (`public/history/` would hide `/history`).
 
-| Path | Room | Notes |
-|------|------|--------|
-| `public/media/history/the-defoe-story/` | The Defoe story | Hull 01.1. Cover USS Henry B. Wilson (`henry-b-wilson-ddg-7.jpg`); USS Carpellotti (`carpellotti-apd-136.jpg`); roll-over (`roll-over.jpg`); launch of USS Earl V. Johnson (`earl-v-johnson-de-702.jpg`); USS Lester (`lester-de-1022.jpg`); wartime deliveries (`wartime-deliveries.jpg`); DDG-8, DDG-12, and DDG-13 (`ddg-8-12-13.jpg`); commercial Great Lakes ships (`commercial-great-lakes.jpg`); yacht interior and typical yacht (`yacht-interior-and-typical-yacht.jpg`); Mackinac Bridge (`mackinac-bridge.jpg`); pipe structures (`mackinac-pipe-structures.jpg`); ore carrier conversion (`ore-carrier-conversion.jpg`); self-unloader boom (`self-unloader-boom.jpg`); yard plan (`the-defoe-yards.jpg`); St. Lawrence Seaway map (`st-lawrence-seaway.jpg`); back cover (`back-cover.jpg`) |
-| `public/media/history/swanson/` | History by F. A. Swanson | Hull 01.2. Aerial from the river (`aerial-from-water.jpg`) |
-| `public/media/history/yachts-auto-barons/` | Yachts of the Auto Barons | Hull 01.3. REOMAR III (`reomar-iii.jpg`) |
-| `public/media/archive/clippings/` | News clippings | Hull 02.2. 1917 torpedo-chaser clipping (`1917-defoe-news-clipping.jpg`); USS Charles F. Adams from the 1999 Saginaw News (`lakefaring-history-uss-charles-f-adams.jpg`); Leila Hyams (`savitar-comes-home-leila-hyams.jpg`); 1955 Times page on the land yacht (`savitar-comes-home-02.jpg`) |
-| `public/media/archive/miscellaneous/perth-commendation/` | HMAS Perth Commendation | Hull 02.5.1. Cover (`cover.jpg`); inside cover (`inside-cover.jpg`); Admiral Hyland (`admiral-john-j-hyland.png`); Captain Doyle (`captain-p-h-doyle.png`) |
-| — | Related links | Hull 02.6. Pointers only; no scans in this room |
+| Folder | Hull |
+|--------|------|
+| `public/media/history/the-defoe-story/` | 01.1 |
+| `public/media/history/swanson/` | 01.2 |
+| `public/media/history/yachts-auto-barons/` | 01.3 |
+| `public/media/archive/clippings/` | 02.2 |
+| `public/media/archive/miscellaneous/perth-commendation/` | 02.5.1 |
 
-Rooms still on stub landings have no media folders yet. Example when photographs ship: `public/archive/photographs/`. Family 02.4.1 is transcript only; no scans in this room yet.
+Stubs have no media folders yet. Family 02.4.1 is transcript only.
