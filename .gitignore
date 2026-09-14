@@ -1,0 +1,4 @@
+/vendor/
+/docs/
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
