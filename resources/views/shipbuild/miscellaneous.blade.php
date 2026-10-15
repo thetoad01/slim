@@ -38,7 +38,7 @@
     <section class="contact">
         <div class="container">
             <p class="kicker">Write the archive</p>
-            <p class="measure mb-4">An original that does not yet have a room, a name on a pamphlet, a correction to the record.</p>
+            <p class="measure mb-4">An advertisement, a brochure, a name on a pamphlet, a correction to the record.</p>
             <a class="giant" href="/#contact">Send a note</a>
         </div>
     </section>

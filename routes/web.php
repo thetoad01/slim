@@ -4,8 +4,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShipbuildController;
+use App\Http\Controllers\SitemapController;
 
 $app->get('/', [HomeController::class, 'index']);
+$app->get('/sitemap.xml', SitemapController::class);
 $app->post('/contact', [ContactController::class, 'store']);
 $app->get('/history', [HistoryController::class, 'index']);
 $app->get('/history/wartime-history/{slug}', [HistoryController::class, 'part']);
@@ -13,6 +15,7 @@ $app->get('/history/{slug}', [HistoryController::class, 'show']);
 $app->get('/shipbuild', [ShipbuildController::class, 'index']);
 
 // Legacy archive URLs. Register before /shipbuild/{slug} so they do not 404.
+$app->redirect('/shipbuild/defoe_menu.html', '/shipbuild', 301);
 $app->redirect('/shipbuild/gallery', '/shipbuild/photographs', 301);
 $app->redirect('/shipbuild/inthenews', '/shipbuild/clippings', 301);
 $app->get('/shipbuild/inthenews/{slug}', function ($request, $response, array $args) {
@@ -29,6 +32,8 @@ $app->get('/shipbuild/inthenews/{slug}', function ($request, $response, array $a
 $app->redirect('/shipbuild/the-defoe-rollover', '/shipbuild/the-rollover', 301);
 $app->redirect('/shipbuild/links', '/shipbuild/related-links', 301);
 $app->redirect('/shipbuild/defoe-story', '/history/the-defoe-story', 301);
+$app->redirect('/shipbuild/TheDefoeStory.htm', '/history/the-defoe-story', 301);
+$app->redirect('/shipbuild/defoe-history01.htm', '/history/swanson', 301);
 $app->redirect('/shipbuild/swanson-history', '/history/swanson', 301);
 $app->redirect('/shipbuild/yachts-auto-barons', '/history/yachts-auto-barons', 301);
 $app->redirect('/shipbuild/offices-supervisor/wartime-history', '/history/wartime-history', 301);

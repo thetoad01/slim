@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShipbuildController;
+use App\Http\Controllers\SitemapController;
 use App\View;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\View\Factory as ViewFactory;
@@ -21,6 +22,7 @@ $container->bind(HomeController::class);
 $container->bind(ContactController::class);
 $container->bind(ShipbuildController::class);
 $container->bind(HistoryController::class);
+$container->bind(SitemapController::class);
 
 AppFactory::setContainer($container);
 

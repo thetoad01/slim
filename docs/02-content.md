@@ -18,7 +18,7 @@ Paths: [03-page-tree.md](03-page-tree.md).
 
 **New pages**
 - `01.5` Research, Development, and Construction of 57 Foot Plastic Boats
-- `02.5.2` SS Ernest R. Breech naming (Miscellaneous)
+- `02.5.3` SS Ernest R. Breech naming (Miscellaneous)
 
 Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hull) can be pages later that pull from these holdings. Do not invent rooms for subjects we do not yet hold as a stack of paper or pictures.
 
@@ -32,10 +32,12 @@ Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hu
 | Company magazine (The Rollover) | The yard’s own periodical | **Archive** |
 | Family papers | Personal and family record tied to the yard | **Archive**, Family room |
 | Awards | Army-Navy **E** awards and similar citations | **Archive**, Family room (until there are enough for their own room) |
-| Miscellaneous | Items that do not fit the stacks above | **Archive**, Misc room |
+| Miscellaneous | Originals that do not fit the stacks above: magazine ads, newspaper ads, brochures, and the like | **Archive**, Misc room |
 | Related links | Other yards, archives, and sites worth keeping in view | **Archive**, last room |
 
 Family papers include Harry J. Defoe’s congressional testimony, photographs of family on the yachts or ships, and related personal documents. Those are not History articles and not the general photo gallery.
+
+Magazine advertisements, newspaper advertisements, and brochures go in Miscellaneous. They are sales paper: not work pictures, and not news clippings. An advertisement printed in an issue of *The Rollover* stays with that issue. *The Defoe story* (01.1) stays in History. That source is a company brochure, and it is the yard’s written account.
 
 ## Sections
 
@@ -60,7 +62,7 @@ The `/shipbuild` rooms match the holdings below. Topics (yachts, the rollover me
 | 02.2 | News clippings | Outside press about the company and its ships. |
 | 02.3 | Company magazine | Issues of the house organ (*The Rollover*). Post the issues here, not as History articles and not mixed with clippings. |
 | 02.4 | Family | Testimony (including Harry Defoe before Congress), family on the yachts and ships, E awards, other family papers. |
-| 02.5 | Miscellaneous | Originals that do not fit the stacks above, until a pile is large enough to split out. Hull 02.5.1 is the 1969 HMAS Perth commendation pamphlet. |
+| 02.5 | Miscellaneous | Originals that do not fit the stacks above, until a pile is large enough to split out. Magazine ads, newspaper ads, and brochures. Hull 02.5.1 is the 1969 HMAS Perth commendation pamphlet. |
 | 02.6 | Related links | Other yards, other archives, other people still keeping Great Lakes shipbuilding in view. Pointers, not our paper. |
 
 If photographs of family on the boats are numerous enough to confuse the work gallery, keep them in Family, not in Photographs.
@@ -113,6 +115,7 @@ Content is PHP data, not a database.
 - **`src/Shipbuild/Clippings.php`** — Hull 02.2. News clippings listing and article pages.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
 - **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Posted.
+- **`src/Shipbuild/UpsideDownAdvertisement.php`** — Hull 02.5.2. Magazine advertisement, p. 68. Posted. Scan, then a transcript.
 - **`src/Shipbuild/FamilyPapers.php`** — Family room listings.
 - **`src/Shipbuild/InvestigationWarEffort.php`** — Harry Defoe’s 1943 hearings (02.4.1). Transcript body is in `Testimony606615.php` and `Testimony618628.php`.
 - Home copy is in `resources/views/home.blade.php`.

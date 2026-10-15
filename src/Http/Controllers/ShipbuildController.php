@@ -10,6 +10,7 @@ use App\Shipbuild\InvestigationWarEffort;
 use App\Shipbuild\Miscellaneous;
 use App\Shipbuild\PerthCommendation;
 use App\Shipbuild\RelatedLinks;
+use App\Shipbuild\UpsideDownAdvertisement;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpNotFoundException;
@@ -88,7 +89,22 @@ final class ShipbuildController extends Controller
     {
         $item = Miscellaneous::findBySlug((string) $args['slug']);
 
-        if ($item === null || $item->slug !== 'perth-commendation') {
+        if ($item === null) {
+            throw new HttpNotFoundException($request);
+        }
+
+        if ($item->slug === 'how-defoe-turns-things-upside-down') {
+            return $this->render($response, 'shipbuild.miscellaneous-item', [
+                'title' => $item->title . ' · Defoe Shipbuilding',
+                'theme' => 'theme-yard',
+                'item' => $item,
+                'byline' => UpsideDownAdvertisement::byline(),
+                'presented' => UpsideDownAdvertisement::presented(),
+                'blocks' => UpsideDownAdvertisement::blocks(),
+            ]);
+        }
+
+        if ($item->slug !== 'perth-commendation') {
             throw new HttpNotFoundException($request);
         }
 

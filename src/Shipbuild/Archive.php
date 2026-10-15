@@ -43,7 +43,7 @@ final class Archive
             $room('02.2', 'Press', 'News clippings', 'Outside press about the company and its ships. Launch days, contracts, the war order book, and the quiet after the gates closed.', 'clippings'),
             $room('02.3', 'Magazine', 'The Rollover', 'Issues of the company magazine. The house organ, not the clippings and not a History article.', 'the-rollover'),
             $room('02.4', 'Family', 'Family papers', 'Harry Defoe’s congressional testimony, family on the yachts and ships, Army-Navy E awards, and other family papers.', 'family'),
-            $room('02.5', 'Misc', 'Miscellaneous', 'Originals that do not yet fit the stacks above. The HMAS Perth commendation pamphlet is the first item.', 'miscellaneous'),
+            $room('02.5', 'Misc', 'Miscellaneous', 'Originals that do not yet fit the stacks above. The Perth pamphlet, magazine advertisements, and brochures.', 'miscellaneous'),
             $room('02.6', 'Index', 'Related links', 'Other yards, other archives, other people still keeping Great Lakes shipbuilding in view. Pointers, not our paper.', 'related-links'),
         ];
     }

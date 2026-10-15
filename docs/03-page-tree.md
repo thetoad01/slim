@@ -10,6 +10,8 @@ Public URLs. Add or change a row here in the same change as the route.
 | Path | Page |
 |------|------|
 | `/` | Home |
+| `/robots.txt` | Crawler rules. Allows all. Points at the sitemap. |
+| `/sitemap.xml` | Canonical URLs of the public pages. Old paths that 301 are not listed. |
 | `/#yard` | The yard |
 | `/#contact` | Write |
 | `POST /contact` | Contact submit. Redirects to `/#contact`. Does not send mail yet. |
@@ -55,6 +57,7 @@ Hull 02. Related links stays last.
 | `/shipbuild/family/investigation-war-effort/testimony/618-628` | 02.4.1 | Testimony, pp. 618–628 | |
 | `/shipbuild/miscellaneous` | 02.5 | Miscellaneous | 02.5.1 linked |
 | `/shipbuild/miscellaneous/perth-commendation` | 02.5.1 | HMAS Perth Commendation | 1969 pamphlet posted |
+| `/shipbuild/miscellaneous/how-defoe-turns-things-upside-down` | 02.5.2 | How Defoe Turns Things Upside Down | Magazine advertisement, p. 68. Magazine and date not on the page |
 | `/shipbuild/related-links` | 02.6 | Related links | Pointers only |
 
 ## Planned
@@ -64,7 +67,7 @@ Move a row to History or Archive when it ships. Add `01.5` or a new Archive room
 | Path | Hull | Page | Notes |
 |------|------|------|--------|
 | `/history/…` | 01.5 | 57 Foot Plastic Boats | Anderson / Thomas J. Defoe. 301 from `/shipbuild/plastic-boats` |
-| `/shipbuild/miscellaneous/…` | 02.5.2 | SS Ernest R. Breech naming | 301 from `/shipbuild/breech-naming` |
+| `/shipbuild/miscellaneous/…` | 02.5.3 | SS Ernest R. Breech naming | 301 from `/shipbuild/breech-naming` |
 
 ## Redirects
 
@@ -73,6 +76,8 @@ Old `/shipbuild` paths. 301 to the row in History or Archive.
 | From | To |
 |------|----|
 | `/shipbuild/defoe-story` | `/history/the-defoe-story` |
+| `/shipbuild/TheDefoeStory.htm` | `/history/the-defoe-story` |
+| `/shipbuild/defoe-history01.htm` | `/history/swanson` |
 | `/shipbuild/swanson-history` | `/history/swanson` |
 | `/shipbuild/yachts-auto-barons` | `/history/yachts-auto-barons` |
 | `/shipbuild/offices-supervisor/wartime-history` | `/history/wartime-history` |
@@ -80,6 +85,7 @@ Old `/shipbuild` paths. 301 to the row in History or Archive.
 | `/shipbuild/offices-supervisor/preface` | `/history/wartime-history/preface` |
 | `/shipbuild/offices-supervisor/introduction` | `/history/wartime-history/preface#introduction` |
 | `/shipbuild/offices-supervisor/part-1` … `part-9` | `/history/wartime-history/part-i` … `part-ix` |
+| `/shipbuild/defoe_menu.html` | `/shipbuild` |
 | `/shipbuild/gallery` | `/shipbuild/photographs` |
 | `/shipbuild/inthenews` | `/shipbuild/clippings` |
 | `/shipbuild/inthenews/1917-torpedo-chasers` | `/shipbuild/clippings/torpedo-chasers` |
@@ -102,5 +108,6 @@ Folders under `public/` when a room is fitted out. Do not put a folder on a live
 | `public/media/history/yachts-auto-barons/` | 01.3 |
 | `public/media/archive/clippings/` | 02.2 |
 | `public/media/archive/miscellaneous/perth-commendation/` | 02.5.1 |
+| `public/media/archive/miscellaneous/how-defoe-turns-things-upside-down/` | 02.5.2 |
 
 Stubs have no media folders yet. Family 02.4.1 is transcript only.
