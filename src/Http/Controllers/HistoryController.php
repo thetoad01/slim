@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\History\Articles;
 use App\History\DefoeStory;
+use App\History\PlasticBoats;
 use App\History\Swanson;
 use App\History\WartimeHistory;
 use App\History\YachtsAutoBarons;
@@ -66,6 +67,18 @@ final class HistoryController extends Controller
             ]);
         }
 
+        if ($article->slug === 'plastic-boats') {
+            return $this->render($response, 'history.plastic-boats', [
+                'title' => $article->title . ' · Defoe Shipbuilding',
+                'article' => $article,
+                'byline' => PlasticBoats::byline(),
+                'contract' => PlasticBoats::contract(),
+                'about' => PlasticBoats::about(),
+                'parts' => PlasticBoats::parts(),
+                'appendicesNote' => PlasticBoats::appendicesNote(),
+            ]);
+        }
+
         if ($article->slug === 'wartime-history') {
             return $this->render($response, 'history.wartime-history', [
                 'title' => $article->title . ' · Defoe Shipbuilding',
@@ -80,6 +93,24 @@ final class HistoryController extends Controller
         }
 
         throw new HttpNotFoundException($request);
+    }
+
+    public function plasticBoatsPart(Request $request, Response $response, array $args): Response
+    {
+        $article = Articles::findArticleBySlug('plastic-boats');
+        $part = PlasticBoats::findPart((string) $args['slug']);
+
+        if ($article === null || $part === null || ! $part['posted']) {
+            throw new HttpNotFoundException($request);
+        }
+
+        return $this->render($response, 'history.wartime-history-part', [
+            'title' => $part['heroTitle'] . ' · Defoe Shipbuilding',
+            'article' => $article,
+            'part' => $part,
+            'blocks' => PlasticBoats::blocksFor($part['slug']),
+            'continue' => PlasticBoats::continueAfter($part['slug']),
+        ]);
     }
 
     public function part(Request $request, Response $response, array $args): Response

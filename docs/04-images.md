@@ -33,6 +33,8 @@ public/media/history/the-defoe-story/roll-over.jpg
 
 Reference it from a `figure` block. Omit `src` until the file is posted; the placeholder stays.
 
+Set `link` on a chart or drawing whose labels are too small in the column. The picture opens that same JPEG in a new tab.
+
 ### Printed page
 
 A magazine advertisement, newspaper advertisement, or brochure page. One JPEG. Longest side **2400 px**, quality **80**, when the scan is that large. Keep the white margin. Do not enlarge a smaller scan; post the file you have and replace it when a finer scan is ready.

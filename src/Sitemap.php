@@ -3,6 +3,7 @@
 namespace App;
 
 use App\History\Articles;
+use App\History\PlasticBoats;
 use App\History\WartimeHistory;
 use App\Shipbuild\Archive;
 use App\Shipbuild\Clippings;
@@ -33,6 +34,12 @@ final class Sitemap
 
         foreach (WartimeHistory::parts() as $part) {
             $paths[] = '/history/wartime-history/' . $part['slug'];
+        }
+
+        foreach (PlasticBoats::parts() as $part) {
+            if ($part['posted']) {
+                $paths[] = PlasticBoats::partPath($part['slug']);
+            }
         }
 
         $paths[] = self::path(Archive::project());

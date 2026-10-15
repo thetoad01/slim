@@ -45,6 +45,7 @@ final class Articles
             $article('01.2', 'History', 'History by F. A. Swanson', 'A yard man’s account. The cadence of the ways as someone who walked them wrote it down.', 'swanson'),
             $article('01.3', 'History', 'Yachts of the Auto Barons', 'John F. Polacsek on Defoe-built yachts for Olds, Rands, Judson, and Kettering — floating mansions from the diesel years.', 'yachts-auto-barons'),
             WartimeHistory::article(),
+            PlasticBoats::article(),
         ];
     }
 

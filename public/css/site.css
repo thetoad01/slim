@@ -220,6 +220,11 @@ body {
     margin: 0 0 2.25rem;
 }
 
+.article-figure a {
+    display: block;
+    line-height: 0;
+}
+
 .article-figure img {
     display: block;
     width: 100%;
@@ -269,6 +274,27 @@ body {
 }
 
 .article-list li { margin-bottom: 0.65rem; }
+
+.article-table {
+    max-width: 40rem;
+    margin: 0 0 1.5rem;
+    overflow-x: auto;
+}
+
+.article-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.article-table th,
+.article-table td {
+    padding: 0.45rem 0.75rem 0.45rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-table th { font-weight: 600; }
 
 .brochure-signatories {
     max-width: 40rem;

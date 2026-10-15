@@ -22,7 +22,7 @@ Hull 01. Indexes stay in the nav; children do not.
 
 | Path | Hull | Page | Notes |
 |------|------|------|--------|
-| `/history` | 01 | History index | All four articles linked |
+| `/history` | 01 | History index | All five articles linked |
 | `/history/the-defoe-story` | 01.1 | The Defoe story | Brochure through the back cover |
 | `/history/swanson` | 01.2 | History by F. A. Swanson | 1964 SNAME paper |
 | `/history/yachts-auto-barons` | 01.3 | Yachts of the Auto Barons | Polacsek; Tonnancour vol. 2 |
@@ -37,6 +37,19 @@ Hull 01. Indexes stay in the nav; children do not.
 | `/history/wartime-history/part-vii` | 01.4 | Part VII | pp. 59–61 |
 | `/history/wartime-history/part-viii` | 01.4 | Part VIII | pp. 62–70 |
 | `/history/wartime-history/part-ix` | 01.4 | Part IX | p. 71 |
+| `/history/plastic-boats` | 01.5 | Research, Development, and Construction of 57 Foot Plastic Boats | Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Appendices B–D listed, not posted |
+| `/history/plastic-boats/part-i` | 01.5 | Part I, Introduction | Fig. 1 posted. The chart and the 3 May 1956 sentence do not agree |
+| `/history/plastic-boats/part-ii` | 01.5 | Part II, Process Investigations | Fig. 2 posted |
+| `/history/plastic-boats/part-iii` | 01.5 | Part III, Tests | Figs. 3 and 4 are one sheet. Fig. 5 posted |
+| `/history/plastic-boats/part-iv` | 01.5 | Part IV, Basic Design Considerations | No figures |
+| `/history/plastic-boats/part-v` | 01.5 | Part V, Local Design Details | Figs. 6 and 7 are cited. The scans are not on the live part page |
+| `/history/plastic-boats/part-vi` | 01.5 | Part VI, Tooling Development | No figures. Photograph 45 is cited and not on the live part page |
+| `/history/plastic-boats/part-vii` | 01.5 | Part VII, Production of MSB-23 | Fig. 8 posted. Fig. 7 and photographs A45, A66, A67, and A85 are cited and not on the live part page |
+| `/history/plastic-boats/part-viii` | 01.5 | Part VIII, Production of ExMSB-23 | No figures. Photographs 6, 169, 208, and 224 are cited and not on the live part page |
+| `/history/plastic-boats/part-ix` | 01.5 | Part IX, Quality Control | Fig. 11 posted |
+| `/history/plastic-boats/part-x` | 01.5 | Part X, Materials | Fig. 12 posted at the end of the part |
+| `/history/plastic-boats/part-xi` | 01.5 | Part XI, Problems | No figures |
+| `/history/plastic-boats/part-xii` | 01.5 | Part XII, Conclusions | No figures |
 
 ## Archive
 
@@ -66,7 +79,9 @@ Move a row to History or Archive when it ships. Add `01.5` or a new Archive room
 
 | Path | Hull | Page | Notes |
 |------|------|------|--------|
-| `/history/…` | 01.5 | 57 Foot Plastic Boats | Anderson / Thomas J. Defoe. 301 from `/shipbuild/plastic-boats` |
+| `/history/plastic-boats/appendix-b` | 01.5 | Appendix B | Plates. 301 from `/shipbuild/plastic-boats/appendix-b` when posted |
+| `/history/plastic-boats/appendix-c` | 01.5 | Appendix C | Plates. 301 from `/shipbuild/plastic-boats/appendix-c` when posted |
+| `/history/plastic-boats/appendix-d` | 01.5 | Appendix D | Plates. 301 from `/shipbuild/plastic-boats/appendix-d` when posted |
 | `/shipbuild/miscellaneous/…` | 02.5.3 | SS Ernest R. Breech naming | 301 from `/shipbuild/breech-naming` |
 
 ## Redirects
@@ -94,6 +109,20 @@ Old `/shipbuild` paths. 301 to the row in History or Archive.
 | `/shipbuild/the-defoe-rollover` | `/shipbuild/the-rollover` |
 | `/shipbuild/investigation-war-effort` | `/shipbuild/family/investigation-war-effort` |
 | `/shipbuild/investigation-war-effort/testimony/{pages}` | `/shipbuild/family/investigation-war-effort/testimony/{pages}` |
+| `/shipbuild/plastic-boats` | `/history/plastic-boats` |
+| `/shipbuild/plastic-boats/table-of-contents` | `/history/plastic-boats#contents` |
+| `/shipbuild/plastic-boats/part-1` | `/history/plastic-boats/part-i` |
+| `/shipbuild/plastic-boats/part-2` | `/history/plastic-boats/part-ii` |
+| `/shipbuild/plastic-boats/part-3` | `/history/plastic-boats/part-iii` |
+| `/shipbuild/plastic-boats/part-4` | `/history/plastic-boats/part-iv` |
+| `/shipbuild/plastic-boats/part-5` | `/history/plastic-boats/part-v` |
+| `/shipbuild/plastic-boats/part-6` | `/history/plastic-boats/part-vi` |
+| `/shipbuild/plastic-boats/part-7` | `/history/plastic-boats/part-vii` |
+| `/shipbuild/plastic-boats/part-8` | `/history/plastic-boats/part-viii` |
+| `/shipbuild/plastic-boats/part-9` | `/history/plastic-boats/part-ix` |
+| `/shipbuild/plastic-boats/part-10` | `/history/plastic-boats/part-x` |
+| `/shipbuild/plastic-boats/part-11` | `/history/plastic-boats/part-xi` |
+| `/shipbuild/plastic-boats/part-12` | `/history/plastic-boats/part-xii` |
 | `/shipbuild/perth-commendation` | `/shipbuild/miscellaneous/perth-commendation` |
 | `/shipbuild/links` | `/shipbuild/related-links` |
 
@@ -106,6 +135,7 @@ Folders under `public/` when a room is fitted out. Do not put a folder on a live
 | `public/media/history/the-defoe-story/` | 01.1 |
 | `public/media/history/swanson/` | 01.2 |
 | `public/media/history/yachts-auto-barons/` | 01.3 |
+| `public/media/history/plastic-boats/` | 01.5 |
 | `public/media/archive/clippings/` | 02.2 |
 | `public/media/archive/miscellaneous/perth-commendation/` | 02.5.1 |
 | `public/media/archive/miscellaneous/how-defoe-turns-things-upside-down/` | 02.5.2 |

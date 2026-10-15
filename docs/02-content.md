@@ -17,7 +17,7 @@ Paths: [03-page-tree.md](03-page-tree.md).
 - Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
 
 **New pages**
-- `01.5` Research, Development, and Construction of 57 Foot Plastic Boats
+- `01.5` Research, Development, and Construction of 57 Foot Plastic Boats — landing and Parts I–XII posted; Appendices B–D not posted
 - `02.5.3` SS Ernest R. Breech naming (Miscellaneous)
 
 Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hull) can be pages later that pull from these holdings. Do not invent rooms for subjects we do not yet hold as a stack of paper or pictures.
@@ -77,8 +77,9 @@ If E awards grow into their own stack, insert them before Miscellaneous and shif
 | 01.2 | History by F. A. Swanson |
 | 01.3 | Yachts of the Auto Barons |
 | 01.4 | The Wartime History of the Offices of the Supervisor of Shipbuilding, USN |
+| 01.5 | Research, Development, and Construction of 57 Foot Plastic Boats |
 
-Add `01.4` and on for further written histories. Do not put clippings, the company magazine, testimony, or photo galleries here.
+Add `01.6` and on for further written histories. Do not put clippings, the company magazine, testimony, or photo galleries here.
 
 ---
 
@@ -111,6 +112,7 @@ Content is PHP data, not a database.
 - **`src/History/DefoeStory.php`** — Hull 01.1. Company brochure posted through the back cover.
 - **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2.
 - **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. Preface and Introduction in `WartimeHistoryPreface.php`. Parts I–IX in `WartimeHistoryPartI.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
+- **`src/History/PlasticBoats.php`** — Hull 01.5. James M. Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Landing and Parts I–XII (`PlasticBoatsPartI.php` through `PlasticBoatsPartXII.php`) posted. Appendices B–D are listed and not posted yet.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
 - **`src/Shipbuild/Clippings.php`** — Hull 02.2. News clippings listing and article pages.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
