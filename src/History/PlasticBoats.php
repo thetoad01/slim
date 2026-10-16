@@ -37,7 +37,7 @@ final class PlasticBoats
 
     public static function appendicesNote(): string
     {
-        return 'The appendix plates are not posted yet.';
+        return '';
     }
 
     /**
@@ -130,9 +130,9 @@ final class PlasticBoats
             ], posted: true),
             self::part('part-xi', 'Part XI', 'Problems', [], posted: true),
             self::part('part-xii', 'Part XII', 'Conclusions', [], posted: true),
-            self::part('appendix-b', 'Appendix B', 'Test Data and Load-Deflection Curves', []),
-            self::part('appendix-c', 'Appendix C', '57 Foot Plastic Boat, Comparison of Three Building Methods', []),
-            self::part('appendix-d', 'Appendix D', 'Basic Strength Analysis', []),
+            self::part('appendix-b', 'Appendix B', 'Test Data and Load-Deflection Curves', [], posted: true),
+            self::part('appendix-c', 'Appendix C', '57 Foot Plastic Boat, Comparison of Three Building Methods', [], posted: true),
+            self::part('appendix-d', 'Appendix D', 'Basic Strength Analysis', [], posted: true),
         ];
     }
 
@@ -203,6 +203,9 @@ final class PlasticBoats
             'part-x' => PlasticBoatsPartX::blocks(),
             'part-xi' => PlasticBoatsPartXI::blocks(),
             'part-xii' => PlasticBoatsPartXII::blocks(),
+            'appendix-b' => PlasticBoatsAppendixB::blocks(),
+            'appendix-c' => PlasticBoatsAppendixC::blocks(),
+            'appendix-d' => PlasticBoatsAppendixD::blocks(),
             default => [],
         };
     }

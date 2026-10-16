@@ -12,13 +12,12 @@ Paths: [03-page-tree.md](03-page-tree.md).
 - Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
 
 **Rooms that exist, still empty or incomplete**
-- Photographs (`02.1`) — stub
+- Photographs (`02.1`) — R/V Knorr, USS Lester, and USS Carpellotti posted. More pictures as they are prepared
 - *The Rollover* (`02.3`) — stub; no issues posted
 - Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
 
 **New pages**
-- `01.5` Research, Development, and Construction of 57 Foot Plastic Boats — landing and Parts I–XII posted; Appendices B–D not posted
-- `02.5.3` SS Ernest R. Breech naming (Miscellaneous)
+- Naming Ceremonies S.S. Ernest R. Breech (`02.5.3`) — pamphlet posted. Small drawings inside the text pages were left out
 
 Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hull) can be pages later that pull from these holdings. Do not invent rooms for subjects we do not yet hold as a stack of paper or pictures.
 
@@ -112,12 +111,14 @@ Content is PHP data, not a database.
 - **`src/History/DefoeStory.php`** — Hull 01.1. Company brochure posted through the back cover.
 - **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2.
 - **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. Preface and Introduction in `WartimeHistoryPreface.php`. Parts I–IX in `WartimeHistoryPartI.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
-- **`src/History/PlasticBoats.php`** — Hull 01.5. James M. Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Landing and Parts I–XII (`PlasticBoatsPartI.php` through `PlasticBoatsPartXII.php`) posted. Appendices B–D are listed and not posted yet.
+- **`src/History/PlasticBoats.php`** — Hull 01.5. James M. Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Landing and Parts I–XII (`PlasticBoatsPartI.php` through `PlasticBoatsPartXII.php`) posted. Appendix B is the 41 plates in `PlasticBoatsAppendixB.php`. Appendix C is the 6 plates in `PlasticBoatsAppendixC.php`. Appendix D is the 18 plates in `PlasticBoatsAppendixD.php`.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
 - **`src/Shipbuild/Clippings.php`** — Hull 02.2. News clippings listing and article pages.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
 - **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Posted.
 - **`src/Shipbuild/UpsideDownAdvertisement.php`** — Hull 02.5.2. Magazine advertisement, p. 68. Posted. Scan, then a transcript.
+- **`src/Shipbuild/Photographs.php`** — Hull 02.1. Work pictures. R/V Knorr, USS Lester (DE-1022), and USS Carpellotti (APD-136) are posted.
+- **`src/Shipbuild/ErnestRBreech.php`** — Hull 02.5.3. Naming ceremony pamphlet, Detroit, 11 April 1962. Posted. Small drawings inside the text pages were left out.
 - **`src/Shipbuild/FamilyPapers.php`** — Family room listings.
 - **`src/Shipbuild/InvestigationWarEffort.php`** — Harry Defoe’s 1943 hearings (02.4.1). Transcript body is in `Testimony606615.php` and `Testimony618628.php`.
 - Home copy is in `resources/views/home.blade.php`.

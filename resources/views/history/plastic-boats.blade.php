@@ -56,7 +56,9 @@
                 </article>
             @endforeach
 
-            <p class="hearing-note mt-4">{{ $appendicesNote }}</p>
+            @if ($appendicesNote !== '')
+                <p class="hearing-note mt-4">{{ $appendicesNote }}</p>
+            @endif
         </div>
     </section>
 

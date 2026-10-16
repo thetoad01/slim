@@ -81,11 +81,15 @@ $app->redirect('/shipbuild/plastic-boats/part-9', '/history/plastic-boats/part-i
 $app->redirect('/shipbuild/plastic-boats/part-10', '/history/plastic-boats/part-x', 301);
 $app->redirect('/shipbuild/plastic-boats/part-11', '/history/plastic-boats/part-xi', 301);
 $app->redirect('/shipbuild/plastic-boats/part-12', '/history/plastic-boats/part-xii', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-b', '/history/plastic-boats/appendix-b', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-c', '/history/plastic-boats/appendix-c', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-d', '/history/plastic-boats/appendix-d', 301);
 $app->get('/shipbuild/plastic-boats/table-of-contents', function ($request, $response) {
     return $response
         ->withHeader('Location', '/history/plastic-boats#contents')
         ->withStatus(301);
 });
 $app->redirect('/shipbuild/perth-commendation', '/shipbuild/miscellaneous/perth-commendation', 301);
+$app->redirect('/shipbuild/breech-naming', '/shipbuild/miscellaneous/ernest-r-breech-naming', 301);
 $app->get('/shipbuild/miscellaneous/{slug}', [ShipbuildController::class, 'miscellaneousItem']);
 $app->get('/shipbuild/{slug}', [ShipbuildController::class, 'show']);

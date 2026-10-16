@@ -52,7 +52,7 @@ Two files. Same slug in both places.
 | File | Longest side | Quality | Path |
 |------|----------------|---------|------|
 | Thumbnail | **640 px** | **75** | `public/media/archive/photographs/thumbs/{slug}.jpg` |
-| Large | **2400 px** | **80** | `public/media/archive/photographs/{slug}.jpg` |
+| Large | **1920 px** | **75** | `public/media/archive/photographs/{slug}.jpg` |
 
 ```
 public/media/archive/photographs/uss-hoel-ddg-13.jpg
@@ -61,15 +61,15 @@ public/media/archive/photographs/thumbs/uss-hoel-ddg-13.jpg
 
 Slugs are lowercase, hyphenated, and end in `.jpg`. Name the vessel or the view (`uss-hoel-ddg-13.jpg`). Do not keep scanner names (`IMG_0126.jpg`, `Untitled_20200327_024152.jpg`).
 
-A 640 px thumb is about twice a grid column. A 2400 px large file stays sharp in the lightbox, including zoom on a hull number or a name on the bow.
+A 640 px thumb is about twice a grid column. A 1920 px large file stays sharp in the lightbox. Do not enlarge a smaller photograph. Use 2400 px, quality 70, only when a hull number or a name on the bow has to stay readable when zoomed.
 
 ## Gallery page
 
-Hull 02.1 is still a stub. When it is fitted out:
+Hull 02.1 lists the photographs in `src/Shipbuild/Photographs.php`.
 
 1. List each photograph in a PHP class under `src/Shipbuild/`, the way clippings are listed. Each entry has the slug, the caption, and the alt text. Do not scan the directory.
 2. Give the room its own Blade view. The hero and stack follow the clippings room. Thumbs use the article-figure border and a caption under the image.
-3. The thumb is a link. `href` is the 2400 px file, so the print still opens if JavaScript fails.
+3. The thumb is a link. `href` is the large file, so the print still opens if JavaScript fails.
 
 ```html
 <a class="gallery-lightbox" href="/media/archive/photographs/uss-hoel-ddg-13.jpg" data-gallery="photographs" data-title="USS Hoel (DDG-13) at Defoe Shipbuilding">

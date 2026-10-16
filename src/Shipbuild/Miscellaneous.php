@@ -10,6 +10,7 @@ final class Miscellaneous
         return [
             PerthCommendation::item(),
             UpsideDownAdvertisement::item(),
+            ErnestRBreech::item(),
         ];
     }
 

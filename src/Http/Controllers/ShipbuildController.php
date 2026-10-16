@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controller;
 use App\Shipbuild\Archive;
 use App\Shipbuild\Clippings;
+use App\Shipbuild\ErnestRBreech;
 use App\Shipbuild\FamilyPapers;
 use App\Shipbuild\InvestigationWarEffort;
 use App\Shipbuild\Miscellaneous;
 use App\Shipbuild\PerthCommendation;
+use App\Shipbuild\Photographs;
 use App\Shipbuild\RelatedLinks;
 use App\Shipbuild\UpsideDownAdvertisement;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -47,6 +49,12 @@ final class ShipbuildController extends Controller
             $payload['links'] = RelatedLinks::all();
 
             return $this->render($response, 'shipbuild.related-links', $payload);
+        }
+
+        if ($room->slug === 'photographs') {
+            $payload['photographs'] = Photographs::all();
+
+            return $this->render($response, 'shipbuild.photographs', $payload);
         }
 
         if ($room->slug === 'clippings') {
@@ -91,6 +99,19 @@ final class ShipbuildController extends Controller
 
         if ($item === null) {
             throw new HttpNotFoundException($request);
+        }
+
+        if ($item->slug === 'ernest-r-breech-naming') {
+            return $this->render($response, 'shipbuild.ernest-r-breech', [
+                'title' => $item->title . ' · Defoe Shipbuilding',
+                'theme' => 'theme-yard',
+                'item' => $item,
+                'byline' => ErnestRBreech::byline(),
+                'presented' => ErnestRBreech::presented(),
+                'cover' => ErnestRBreech::cover(),
+                'sections' => ErnestRBreech::sections(),
+                'blocks' => ErnestRBreech::blocks(),
+            ]);
         }
 
         if ($item->slug === 'how-defoe-turns-things-upside-down') {

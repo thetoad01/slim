@@ -71,6 +71,23 @@ Two photographs per row from the Bootstrap `md` breakpoint; one column on smalle
 ],
 ```
 
+### Links
+
+A list of files. The page shows the label and opens the file in a new tab. It does not load the picture.
+
+```php
+[
+    'type' => 'links',
+    'items' => [
+        [
+            'href' => '/media/history/plastic-boats/appendix-page-102.jpg',
+            'text' => 'Test Data 3" x 16" panels Uniformly Distributed Load',
+            'pages' => '102',   // optional; prints as “p. 102”
+        ],
+    ],
+],
+```
+
 ### List
 
 Prefer this when the list is one unit in the source.

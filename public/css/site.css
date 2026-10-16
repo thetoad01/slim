@@ -234,6 +234,8 @@ body {
 
 .article-figure.narrow { max-width: 16rem; }
 
+.photo-grid .article-figure { max-width: none; margin: 0; }
+
 .article-figure figcaption { margin-top: 0.65rem; }
 
 .article-figure-placeholder {

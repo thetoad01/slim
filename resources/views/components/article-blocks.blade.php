@@ -42,6 +42,17 @@
                     @endforeach
                 </div>
             </div>
+        @elseif (($block['type'] ?? '') === 'links')
+            <ul class="article-list">
+                @foreach ($block['items'] as $item)
+                    <li>
+                        <a href="{{ $item['href'] }}" target="_blank" rel="noopener noreferrer">{{ $item['text'] }}</a>
+                        @if (! empty($item['pages']))
+                            <span class="tag">p. {{ $item['pages'] }}</span>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
         @elseif (($block['type'] ?? '') === 'list')
             @if (! empty($block['ordered']))
                 <ol class="article-list{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">

@@ -37,7 +37,7 @@ Hull 01. Indexes stay in the nav; children do not.
 | `/history/wartime-history/part-vii` | 01.4 | Part VII | pp. 59–61 |
 | `/history/wartime-history/part-viii` | 01.4 | Part VIII | pp. 62–70 |
 | `/history/wartime-history/part-ix` | 01.4 | Part IX | p. 71 |
-| `/history/plastic-boats` | 01.5 | Research, Development, and Construction of 57 Foot Plastic Boats | Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Appendices B–D listed, not posted |
+| `/history/plastic-boats` | 01.5 | Research, Development, and Construction of 57 Foot Plastic Boats | Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Appendices B–D posted |
 | `/history/plastic-boats/part-i` | 01.5 | Part I, Introduction | Fig. 1 posted. The chart and the 3 May 1956 sentence do not agree |
 | `/history/plastic-boats/part-ii` | 01.5 | Part II, Process Investigations | Fig. 2 posted |
 | `/history/plastic-boats/part-iii` | 01.5 | Part III, Tests | Figs. 3 and 4 are one sheet. Fig. 5 posted |
@@ -50,6 +50,9 @@ Hull 01. Indexes stay in the nav; children do not.
 | `/history/plastic-boats/part-x` | 01.5 | Part X, Materials | Fig. 12 posted at the end of the part |
 | `/history/plastic-boats/part-xi` | 01.5 | Part XI, Problems | No figures |
 | `/history/plastic-boats/part-xii` | 01.5 | Part XII, Conclusions | No figures |
+| `/history/plastic-boats/appendix-b` | 01.5 | Appendix B | Plates, pp. 102–142. 41 sheets |
+| `/history/plastic-boats/appendix-c` | 01.5 | Appendix C | Plates, pp. 144–149. 6 sheets |
+| `/history/plastic-boats/appendix-d` | 01.5 | Appendix D | Plates, pp. 151–154, 156–166, 168–170. 18 sheets |
 
 ## Archive
 
@@ -58,7 +61,7 @@ Hull 02. Related links stays last.
 | Path | Hull | Page | Notes |
 |------|------|------|--------|
 | `/shipbuild` | 02 | Archive index | All six rooms linked |
-| `/shipbuild/photographs` | 02.1 | Photographs | Stub |
+| `/shipbuild/photographs` | 02.1 | Photographs | R/V Knorr, USS Lester, and USS Carpellotti posted |
 | `/shipbuild/clippings` | 02.2 | News clippings | 02.2.1–02.2.3 linked |
 | `/shipbuild/clippings/torpedo-chasers` | 02.2.1 | Five Torpedo Chasers for Government | 1917 |
 | `/shipbuild/clippings/lakefaring-history` | 02.2.2 | Our Lakefaring History | *The Saginaw News*, 16 January 1999 |
@@ -68,21 +71,17 @@ Hull 02. Related links stays last.
 | `/shipbuild/family/investigation-war-effort` | 02.4.1 | Investigation of the Progress of the War Effort | Harry Defoe, 1943 |
 | `/shipbuild/family/investigation-war-effort/testimony/606-615` | 02.4.1 | Testimony, pp. 606–615 | |
 | `/shipbuild/family/investigation-war-effort/testimony/618-628` | 02.4.1 | Testimony, pp. 618–628 | |
-| `/shipbuild/miscellaneous` | 02.5 | Miscellaneous | 02.5.1 linked |
+| `/shipbuild/miscellaneous` | 02.5 | Miscellaneous | 02.5.1–02.5.3 linked |
 | `/shipbuild/miscellaneous/perth-commendation` | 02.5.1 | HMAS Perth Commendation | 1969 pamphlet posted |
 | `/shipbuild/miscellaneous/how-defoe-turns-things-upside-down` | 02.5.2 | How Defoe Turns Things Upside Down | Magazine advertisement, p. 68. Magazine and date not on the page |
+| `/shipbuild/miscellaneous/ernest-r-breech-naming` | 02.5.3 | Naming Ceremonies S.S. Ernest R. Breech | Detroit, 11 April 1962. Pamphlet posted |
 | `/shipbuild/related-links` | 02.6 | Related links | Pointers only |
 
 ## Planned
 
 Move a row to History or Archive when it ships. Add `01.5` or a new Archive room in hull order.
 
-| Path | Hull | Page | Notes |
-|------|------|------|--------|
-| `/history/plastic-boats/appendix-b` | 01.5 | Appendix B | Plates. 301 from `/shipbuild/plastic-boats/appendix-b` when posted |
-| `/history/plastic-boats/appendix-c` | 01.5 | Appendix C | Plates. 301 from `/shipbuild/plastic-boats/appendix-c` when posted |
-| `/history/plastic-boats/appendix-d` | 01.5 | Appendix D | Plates. 301 from `/shipbuild/plastic-boats/appendix-d` when posted |
-| `/shipbuild/miscellaneous/…` | 02.5.3 | SS Ernest R. Breech naming | 301 from `/shipbuild/breech-naming` |
+Nothing is waiting in this list.
 
 ## Redirects
 
@@ -123,7 +122,11 @@ Old `/shipbuild` paths. 301 to the row in History or Archive.
 | `/shipbuild/plastic-boats/part-10` | `/history/plastic-boats/part-x` |
 | `/shipbuild/plastic-boats/part-11` | `/history/plastic-boats/part-xi` |
 | `/shipbuild/plastic-boats/part-12` | `/history/plastic-boats/part-xii` |
+| `/shipbuild/plastic-boats/appendix-b` | `/history/plastic-boats/appendix-b` |
+| `/shipbuild/plastic-boats/appendix-c` | `/history/plastic-boats/appendix-c` |
+| `/shipbuild/plastic-boats/appendix-d` | `/history/plastic-boats/appendix-d` |
 | `/shipbuild/perth-commendation` | `/shipbuild/miscellaneous/perth-commendation` |
+| `/shipbuild/breech-naming` | `/shipbuild/miscellaneous/ernest-r-breech-naming` |
 | `/shipbuild/links` | `/shipbuild/related-links` |
 
 ## Media
@@ -136,8 +139,10 @@ Folders under `public/` when a room is fitted out. Do not put a folder on a live
 | `public/media/history/swanson/` | 01.2 |
 | `public/media/history/yachts-auto-barons/` | 01.3 |
 | `public/media/history/plastic-boats/` | 01.5 |
+| `public/media/archive/photographs/` | 02.1 |
 | `public/media/archive/clippings/` | 02.2 |
 | `public/media/archive/miscellaneous/perth-commendation/` | 02.5.1 |
 | `public/media/archive/miscellaneous/how-defoe-turns-things-upside-down/` | 02.5.2 |
+| `public/media/archive/miscellaneous/ernest-r-breech/` | 02.5.3 |
 
 Stubs have no media folders yet. Family 02.4.1 is transcript only.
