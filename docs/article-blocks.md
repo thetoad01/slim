@@ -22,7 +22,7 @@ A news clipping is a row in `Clippings::pages()`. `ClippingsController::index()`
 
 Block examples: `src/History/DefoeStory.php`, `src/History/WartimeHistoryPartIII.php`.
 
-Swanson, Yachts of the Auto Barons, and the Wartime History preface and Parts I–II are markdown under `content/history/`. A new paper can be markdown or blocks. Do not copy the hero markup into the view.
+Swanson, Yachts of the Auto Barons, and the Wartime History landing share `history.paper`. Preface and Parts I–II are markdown under `content/history/wartime-history/`. A new paper can be markdown or blocks. Do not copy the hero markup into a new view.
 
 ## Authoring a block
 

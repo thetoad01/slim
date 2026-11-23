@@ -2,6 +2,7 @@
 
 namespace App\History;
 
+use App\Markdown\Converter;
 use App\Shipbuild\Project;
 
 final class Articles
@@ -112,25 +113,25 @@ final class Articles
                 ],
             ],
             'swanson' => [
-                'view' => 'history.swanson',
+                'view' => 'history.paper',
                 'mark' => 'May 21, 1964',
                 'primaryHref' => '#paper',
                 'primaryLabel' => 'The paper',
                 'data' => fn (): array => [
-                    'html' => Swanson::html(),
+                    'html' => Converter::fileToHtml('content/history/swanson.md'),
                 ],
             ],
             'yachts-auto-barons' => [
-                'view' => 'history.yachts-auto-barons',
+                'view' => 'history.paper',
                 'mark' => 'Tonnancour',
                 'primaryHref' => '#paper',
                 'primaryLabel' => 'The paper',
                 'data' => fn (): array => [
-                    'html' => YachtsAutoBarons::html(),
+                    'html' => Converter::fileToHtml('content/history/yachts-auto-barons.md'),
                 ],
             ],
             'wartime-history' => [
-                'view' => 'history.wartime-history',
+                'view' => 'history.paper',
                 'mark' => '27 May 1946',
                 'primaryHref' => '#contents',
                 'primaryLabel' => 'Contents',

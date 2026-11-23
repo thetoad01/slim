@@ -107,10 +107,8 @@ When you add an article or room, use the next number in that hull. Do not reuse 
 Content is PHP data, not a database.
 
 - **`src/Shipbuild/Project.php`** — one hull, room, or article card.
-- **`src/History/Articles.php`** — history landing, article cards, and `pages()`. That array is the slug lookup for `/history/{slug}`. Each row names the view, the hero mark, the copper link, and the body. The compact hero is `<x-hero-history>`.
+- **`src/History/Articles.php`** — history landing, article cards, and `pages()`. That array is the slug lookup for `/history/{slug}`. Each row names the view, the hero mark, the copper link, and the body. The compact hero is `<x-hero-history>`. Swanson (`content/history/swanson.md`), Yachts of the Auto Barons (`content/history/yachts-auto-barons.md`), and the Wartime History landing share the view `history.paper`.
 - **`src/History/DefoeStory.php`** — Hull 01.1. Company brochure posted through the back cover.
-- **`src/History/Swanson.php`** — Hull 01.2. Markdown in `content/history/swanson.md`.
-- **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2. Markdown in `content/history/yachts-auto-barons.md`.
 - **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. `parts()` is the slug lookup for `/history/wartime-history/{slug}`. `hero()` builds the part hero from that row. Preface and Parts I–II are markdown. Parts III–IX are `WartimeHistoryPartIII.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
 - **`src/History/PlasticBoats.php`** — Hull 01.5. James M. Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Landing and Parts I–XII (`PlasticBoatsPartI.php` through `PlasticBoatsPartXII.php`) posted. Appendix B is the 41 plates in `PlasticBoatsAppendixB.php`. Appendix C is the 6 plates in `PlasticBoatsAppendixC.php`. Appendix D is the 18 plates in `PlasticBoatsAppendixD.php`.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
