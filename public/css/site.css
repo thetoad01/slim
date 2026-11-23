@@ -170,9 +170,9 @@ body {
 .work-item {
     display: grid;
     grid-template-columns: 9rem 1fr auto;
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: end;
-    padding: 2.4rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--line);
 }
 
@@ -435,6 +435,13 @@ body {
     --rust: #7a5c38;
     --muted: #5c6560;
     --line: rgba(8, 20, 28, 0.16);
+}
+
+/* Gold kickers disappear on the fog and paper bands. Keep them on the dark hero. */
+.theme-yard .work .kicker,
+.theme-yard .contact .kicker,
+.theme-yard .case-body .kicker {
+    color: color-mix(in srgb, var(--rust) 90%, var(--ink));
 }
 
 @media (max-width: 991px) {
