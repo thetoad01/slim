@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClippingsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
@@ -61,7 +62,8 @@ $app->get('/shipbuild/investigation-war-effort/testimony/{pages}', function ($re
 
 $app->get('/shipbuild/family/{slug}', [ShipbuildController::class, 'paper']);
 $app->get('/shipbuild/family/{slug}/testimony/{pages}', [ShipbuildController::class, 'testimony']);
-$app->get('/shipbuild/clippings/{slug}', [ShipbuildController::class, 'clipping']);
+$app->get('/shipbuild/clippings', [ClippingsController::class, 'index']);
+$app->get('/shipbuild/clippings/{slug}', [ClippingsController::class, 'show']);
 $app->redirect('/shipbuild/perth-commendation', '/shipbuild/miscellaneous/perth-commendation', 301);
 $app->get('/shipbuild/miscellaneous/{slug}', [ShipbuildController::class, 'miscellaneousItem']);
 $app->get('/shipbuild/{slug}', [ShipbuildController::class, 'show']);

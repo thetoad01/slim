@@ -78,7 +78,7 @@ slim/
 ### Views
 
 - Templates live in `resources/views`. Names use Blade dots: `shipbuild.landing` → `resources/views/shipbuild/landing.blade.php`.
-- Components (`<x-menu />`, `<x-contact-form />`) live in `resources/views/components`.
+- Components (`<x-menu />`, `<x-contact-form />`, `<x-hero-history />`, `<x-hero-archive />`, `<x-case-meta />`, `<x-article-blocks />`) live in `resources/views/components`.
 - The archive page sets `theme` to `theme-yard` so the layout can switch look.
 
 ## Adding a page
@@ -88,3 +88,5 @@ slim/
 3. Register the route in `routes/web.php`.
 4. Add a Blade template under `resources/views`.
 5. Bind the controller in `bootstrap/app.php` if it is new.
+
+A history article does not get its own action. Add the card in `Articles::all()` and a row in `Articles::pages()`. `HistoryController::show()` looks the slug up. The view uses `<x-hero-history :hero="$hero" />`. See [article-blocks.md](article-blocks.md).

@@ -2,21 +2,15 @@
 
 @section('content')
 
-    <section class="hero hero-compact">
-        <div class="container hero-inner">
-            <p class="kicker">Hull {{ $article->hullNo }} · {{ $article->tag }} · {{ $part['kicker'] }}</p>
-            <h1>{{ $part['heroTitle'] }}</h1>
-            <p class="hero-lede">{{ $part['lede'] }}</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-copper" href="#paper">This part</a>
-                <a class="btn btn-ghost" href="{{ $article->path() }}#contents">Back to the report</a>
-            </div>
-        </div>
-    </section>
+    <x-hero-history :hero="$hero" />
 
     <section class="case-body" id="paper">
         <div class="container">
-            <x-article-blocks :blocks="$blocks" />
+            @isset($html)
+                {!! $html !!}
+            @else
+                <x-article-blocks :blocks="$blocks" />
+            @endisset
 
             <div class="mt-5">
                 <a class="btn btn-copper" href="{{ $continue['href'] }}">{{ $continue['label'] }}</a>

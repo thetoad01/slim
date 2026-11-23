@@ -2,32 +2,9 @@
 
 @section('content')
 
-    <section class="hero hero-compact">
-        <div class="container hero-inner">
-            <p class="kicker">Hull {{ $room->hullNo }} · {{ $room->tag }} · Archive</p>
-            <h1>{{ $room->title }}</h1>
-            <p class="hero-lede">{{ $room->summary }}</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-copper" href="#press">The clippings</a>
-                <a class="btn btn-ghost" href="/shipbuild#rooms">Back to the archive</a>
-            </div>
-        </div>
-    </section>
+    <x-hero-archive :hero="$hero" />
 
-    <section class="case-meta">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="tag">Hold</div>
-                    <p class="mb-0">Outside press. Newspapers about the company and its ships.</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="tag">In the stack</div>
-                    <p class="mb-0">Each clipping is its own page. More will be posted as they come in.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-case-meta :meta="$meta" />
 
     <section class="work" id="press">
         <div class="container">

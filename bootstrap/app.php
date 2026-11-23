@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClippingsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
@@ -20,6 +21,7 @@ $container->instance(ViewFactory::class, $view);
 $container->bind(HomeController::class);
 $container->bind(ContactController::class);
 $container->bind(ShipbuildController::class);
+$container->bind(ClippingsController::class);
 $container->bind(HistoryController::class);
 
 AppFactory::setContainer($container);

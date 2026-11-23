@@ -14,20 +14,7 @@
         </div>
     </section>
 
-    <section class="case-meta">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="tag">Hold</div>
-                    <p class="mb-0">Pointers. Not our paper.</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="tag">In view</div>
-                    <p class="mb-0">Other yards, other archives, other people still keeping Great Lakes shipbuilding in sight. Cruisemaster yachts, the roll-over, the war order book, vessel lists, and ships that left this river.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-case-meta :meta="$meta" />
 
     <section class="work" id="index">
         <div class="container">

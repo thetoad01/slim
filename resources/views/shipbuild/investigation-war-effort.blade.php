@@ -14,20 +14,7 @@
         </div>
     </section>
 
-    <section class="case-meta">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="tag">Witness</div>
-                    <p class="mb-0">{{ $witness }}</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="tag">Hearings</div>
-                    <p class="mb-0">{{ $hearings }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-case-meta :meta="$meta" />
 
     <section class="case-body">
         <div class="container">

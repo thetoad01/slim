@@ -15,7 +15,8 @@
         "slim/psr7": "^1.8",
         "illuminate/view": "^13.31",
         "illuminate/events": "^13.31",
-        "illuminate/filesystem": "^13.31"
+        "illuminate/filesystem": "^13.31",
+        "league/commonmark": "^2.10"
     },
     "autoload": {
         "psr-4": {

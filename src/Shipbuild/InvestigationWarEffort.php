@@ -28,6 +28,17 @@ final class InvestigationWarEffort
         return 'House Committee on Naval Affairs, Seventy-Eighth Congress, first session. H. Res. 30. Volume 2. June 10–30, 1943. Renegotiation of war contracts.';
     }
 
+    /**
+     * @return list<array{label: string, text: string}>
+     */
+    public static function meta(): array
+    {
+        return [
+            ['label' => 'Witness', 'text' => self::witness()],
+            ['label' => 'Hearings', 'text' => self::hearings()],
+        ];
+    }
+
     public static function about(): string
     {
         return 'The published hearings are a 1,311-page bound document. This archive includes only the testimony of Harry J. Defoe, managing partner, Defoe Shipbuilding Co., Bay City, Mich.';

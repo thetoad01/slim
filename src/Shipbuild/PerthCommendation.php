@@ -29,6 +29,17 @@ final class PerthCommendation
     }
 
     /**
+     * @return list<array{label: string, text: string}>
+     */
+    public static function meta(): array
+    {
+        return [
+            ['label' => 'By', 'text' => self::byline()],
+            ['label' => 'From', 'text' => self::presented()],
+        ];
+    }
+
+    /**
      * @return array{caption: string, src: string}
      */
     public static function cover(): array

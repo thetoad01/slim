@@ -63,4 +63,15 @@ final class RelatedLinks
             ),
         ];
     }
+
+    /**
+     * @return list<array{label: string, text: string}>
+     */
+    public static function meta(): array
+    {
+        return [
+            ['label' => 'Hold', 'text' => 'Pointers. Not our paper.'],
+            ['label' => 'In view', 'text' => 'Other yards, other archives, other people still keeping Great Lakes shipbuilding in sight. Cruisemaster yachts, the roll-over, the war order book, vessel lists, and ships that left this river.'],
+        ];
+    }
 }

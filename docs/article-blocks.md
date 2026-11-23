@@ -6,17 +6,23 @@ Change how a heading, figure, or list looks in `resources/views/components/artic
 
 ## How a page is wired
 
-1. A PHP class (or clipping record) returns a list of blocks in print order.
-2. The controller passes that list to the view as `$blocks` (clippings use `$clipping['blocks']`).
-3. The Blade view owns only the chrome: hero, byline, contents list, contact. The body is:
+1. A PHP class (or clipping record) returns a list of blocks in print order, or a markdown file is converted to HTML.
+2. History articles are a row in `Articles::pages()`, keyed by the URL slug. `HistoryController::show()` looks that row up and passes `$hero` plus the row’s `data`. It does not branch on the slug. A wartime part is a row in `WartimeHistory::parts()`.
+3. The history view starts with the shared hero, then the body:
 
 ```blade
+<x-hero-history :hero="$hero" />
+
 <x-article-blocks :blocks="$blocks" />
 ```
 
-Examples: `src/History/DefoeStory.php`, `src/History/YachtsAutoBarons.php`, `src/History/WartimeHistoryPartI.php`, `src/Shipbuild/Clippings.php`.
+`{!! $html !!}` replaces `<x-article-blocks>` when the row’s data is markdown. Hull, tag, title, and lede come from the article. The row adds `mark`, `primaryHref`, and `primaryLabel`. The ghost link is “Back to History” unless the hero array sets `backHref` and `backLabel`.
 
-Swanson is still a list of paragraph strings plus one figure in the view. New papers should use blocks instead.
+A news clipping is a row in `Clippings::pages()`. `ClippingsController::index()` and `show()` look that up. The view is `<x-hero-archive :hero="$hero" />`, then `{!! $html !!}` from `content/clippings/{slug}.md`.
+
+Block examples: `src/History/DefoeStory.php`, `src/History/WartimeHistoryPartIII.php`.
+
+Swanson, Yachts of the Auto Barons, and the Wartime History preface and Parts I–II are markdown under `content/history/`. A new paper can be markdown or blocks. Do not copy the hero markup into the view.
 
 ## Authoring a block
 
@@ -123,11 +129,15 @@ Both use the hearing-note style.
 ],
 ```
 
-## Adding a future page
+## Adding a history article
 
-1. Put the transcription in a PHP class as `blocks()` (or a `blocks` key on the record).
-2. Add a Blade view that extends `layouts.app`, with hero/meta as needed.
-3. Render the body with `<x-article-blocks :blocks="$blocks" />`.
-4. Do not add a new `if ($block['type'] === …)` in the page view. If a paper needs a new shape, add that type to the component first, then use it in the array.
+1. Add the card in `Articles::all()` (a `Project`, usually from the article class).
+2. Add a row in `Articles::pages()` with the same slug: `view`, `mark`, `primaryHref`, `primaryLabel`, and a `data` closure for the body.
+3. Add a Blade view that extends `layouts.app`, starts with `<x-hero-history :hero="$hero" />`, then `<x-article-blocks>` or `{!! $html !!}`.
+4. Add the public path in [03-page-tree.md](03-page-tree.md). `/history/{slug}` is already routed.
 
-Catalog fields (title, slug, hull, lede, byline) stay on the article class or `Project`. They are not blocks.
+A new wartime part is a key in `WartimeHistory::parts()`. The part view and `WartimeHistory::hero()` are already shared.
+
+Do not add a new `if ($block['type'] === …)` in the page view. If a paper needs a new shape, add that type to `<x-article-blocks>` first, then use it in the array.
+
+Catalog fields (title, slug, hull, lede, byline) stay on the article class or `Project`. They are not blocks. The hero mark and the copper link stay on the `pages()` row.

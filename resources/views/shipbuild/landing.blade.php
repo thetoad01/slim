@@ -21,20 +21,7 @@
         </div>
     </section>
 
-    <section class="case-meta">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="tag">Yard</div>
-                    <p class="mb-0">{{ $archive->client }}</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="tag">Hold</div>
-                    <p class="mb-0">Photographs, news clippings, <em>The Rollover</em>, family papers, miscellaneous, and related links. Six rooms. One yard.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-case-meta :meta="$meta" />
 
     <section class="work" id="rooms">
         <div class="container">

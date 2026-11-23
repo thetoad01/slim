@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controller;
 use App\Shipbuild\Archive;
-use App\Shipbuild\Clippings;
 use App\Shipbuild\FamilyPapers;
 use App\Shipbuild\InvestigationWarEffort;
 use App\Shipbuild\Miscellaneous;
@@ -24,6 +23,7 @@ final class ShipbuildController extends Controller
             'title' => 'Defoe Shipbuilding · Archives',
             'theme' => 'theme-yard',
             'archive' => $archive,
+            'meta' => Archive::meta(),
             'rooms' => Archive::rooms(),
         ]);
     }
@@ -44,14 +44,9 @@ final class ShipbuildController extends Controller
 
         if ($room->slug === 'related-links') {
             $payload['links'] = RelatedLinks::all();
+            $payload['meta'] = RelatedLinks::meta();
 
             return $this->render($response, 'shipbuild.related-links', $payload);
-        }
-
-        if ($room->slug === 'clippings') {
-            $payload['clippings'] = Clippings::all();
-
-            return $this->render($response, 'shipbuild.clippings', $payload);
         }
 
         if ($room->slug === 'family') {
@@ -69,21 +64,6 @@ final class ShipbuildController extends Controller
         return $this->render($response, 'shipbuild.room', $payload);
     }
 
-    public function clipping(Request $request, Response $response, array $args): Response
-    {
-        $clipping = Clippings::findBySlug((string) $args['slug']);
-
-        if ($clipping === null) {
-            throw new HttpNotFoundException($request);
-        }
-
-        return $this->render($response, 'shipbuild.clipping', [
-            'title' => $clipping['title'] . ' · Defoe Shipbuilding',
-            'theme' => 'theme-yard',
-            'clipping' => $clipping,
-        ]);
-    }
-
     public function miscellaneousItem(Request $request, Response $response, array $args): Response
     {
         $item = Miscellaneous::findBySlug((string) $args['slug']);
@@ -96,8 +76,7 @@ final class ShipbuildController extends Controller
             'title' => $item->title . ' · Defoe Shipbuilding',
             'theme' => 'theme-yard',
             'item' => $item,
-            'byline' => PerthCommendation::byline(),
-            'presented' => PerthCommendation::presented(),
+            'meta' => PerthCommendation::meta(),
             'cover' => PerthCommendation::cover(),
             'insideCover' => PerthCommendation::insideCover(),
             'sections' => PerthCommendation::sections(),
@@ -121,8 +100,7 @@ final class ShipbuildController extends Controller
             'title' => $paper->title . ' · Defoe Shipbuilding',
             'theme' => 'theme-yard',
             'paper' => $paper,
-            'witness' => InvestigationWarEffort::witness(),
-            'hearings' => InvestigationWarEffort::hearings(),
+            'meta' => InvestigationWarEffort::meta(),
             'about' => InvestigationWarEffort::about(),
             'sectionsNote' => InvestigationWarEffort::sectionsNote(),
             'sections' => InvestigationWarEffort::sections(),

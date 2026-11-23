@@ -105,12 +105,13 @@ When you add an article or room, use the next number in that hull. Do not reuse 
 Content is PHP data, not a database.
 
 - **`src/Shipbuild/Project.php`** — one hull, room, or article card.
-- **`src/History/Articles.php`** — history landing and article listings.
+- **`src/History/Articles.php`** — history landing, article cards, and `pages()`. That array is the slug lookup for `/history/{slug}`. Each row names the view, the hero mark, the copper link, and the body. The compact hero is `<x-hero-history>`.
 - **`src/History/DefoeStory.php`** — Hull 01.1. Company brochure posted through the back cover.
-- **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2.
-- **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. Preface and Introduction in `WartimeHistoryPreface.php`. Parts I–IX in `WartimeHistoryPartI.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
+- **`src/History/Swanson.php`** — Hull 01.2. Markdown in `content/history/swanson.md`.
+- **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2. Markdown in `content/history/yachts-auto-barons.md`.
+- **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. `parts()` is the slug lookup for `/history/wartime-history/{slug}`. `hero()` builds the part hero from that row. Preface and Parts I–II are markdown. Parts III–IX are `WartimeHistoryPartIII.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
-- **`src/Shipbuild/Clippings.php`** — Hull 02.2. News clippings listing and article pages.
+- **`src/Shipbuild/Clippings.php`** — Hull 02.2. `pages()` is the slug lookup. Each row is the card, the hero, and a transcript in `content/clippings/{slug}.md`. `ClippingsController` has `index` and `show`.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
 - **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Posted.
 - **`src/Shipbuild/FamilyPapers.php`** — Family room listings.

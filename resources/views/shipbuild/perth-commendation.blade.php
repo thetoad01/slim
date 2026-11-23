@@ -14,20 +14,7 @@
         </div>
     </section>
 
-    <section class="case-meta">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="tag">By</div>
-                    <p class="mb-0">{{ $byline }}</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="tag">From</div>
-                    <p class="mb-0">{{ $presented }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-case-meta :meta="$meta" />
 
     <section class="case-body" id="cover">
         <div class="container">

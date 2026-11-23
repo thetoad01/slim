@@ -48,6 +48,17 @@ final class Archive
         ];
     }
 
+    /**
+     * @return list<array{label: string, text: string, html?: bool}>
+     */
+    public static function meta(): array
+    {
+        return [
+            ['label' => 'Yard', 'text' => self::project()->client],
+            ['label' => 'Hold', 'text' => 'Photographs, news clippings, <em>The Rollover</em>, family papers, miscellaneous, and related links. Six rooms. One yard.', 'html' => true],
+        ];
+    }
+
     public static function findRoomBySlug(string $slug): ?Project
     {
         foreach (self::rooms() as $room) {
