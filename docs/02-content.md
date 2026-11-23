@@ -12,13 +12,12 @@ Paths: [03-page-tree.md](03-page-tree.md).
 - Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
 
 **Rooms that exist, still empty or incomplete**
-- Photographs (`02.1`) — stub
+- Photographs (`02.1`) — R/V Knorr, USS Lester, and USS Carpellotti posted. More pictures as they are prepared
 - *The Rollover* (`02.3`) — stub; no issues posted
 - Wartime History (`01.4`) — Part V scan gap (see STOP below); exhibits listed, not posted
 
 **New pages**
-- `01.5` Research, Development, and Construction of 57 Foot Plastic Boats
-- `02.5.2` SS Ernest R. Breech naming (Miscellaneous)
+- Naming Ceremonies S.S. Ernest R. Breech (`02.5.3`) — pamphlet posted. Small drawings inside the text pages were left out
 
 Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hull) can be pages later that pull from these holdings. Do not invent rooms for subjects we do not yet hold as a stack of paper or pictures.
 
@@ -32,10 +31,12 @@ Organize by **what we have**, not by topic. Topics (rollover, yachts, a named hu
 | Company magazine (The Rollover) | The yard’s own periodical | **Archive** |
 | Family papers | Personal and family record tied to the yard | **Archive**, Family room |
 | Awards | Army-Navy **E** awards and similar citations | **Archive**, Family room (until there are enough for their own room) |
-| Miscellaneous | Items that do not fit the stacks above | **Archive**, Misc room |
+| Miscellaneous | Originals that do not fit the stacks above: magazine ads, newspaper ads, brochures, and the like | **Archive**, Misc room |
 | Related links | Other yards, archives, and sites worth keeping in view | **Archive**, last room |
 
 Family papers include Harry J. Defoe’s congressional testimony, photographs of family on the yachts or ships, and related personal documents. Those are not History articles and not the general photo gallery.
+
+Magazine advertisements, newspaper advertisements, and brochures go in Miscellaneous. They are sales paper: not work pictures, and not news clippings. An advertisement printed in an issue of *The Rollover* stays with that issue. *The Defoe story* (01.1) stays in History. That source is a company brochure, and it is the yard’s written account.
 
 ## Sections
 
@@ -60,7 +61,7 @@ The `/shipbuild` rooms match the holdings below. Topics (yachts, the rollover me
 | 02.2 | News clippings | Outside press about the company and its ships. |
 | 02.3 | Company magazine | Issues of the house organ (*The Rollover*). Post the issues here, not as History articles and not mixed with clippings. |
 | 02.4 | Family | Testimony (including Harry Defoe before Congress), family on the yachts and ships, E awards, other family papers. |
-| 02.5 | Miscellaneous | Originals that do not fit the stacks above, until a pile is large enough to split out. Hull 02.5.1 is the 1969 HMAS Perth commendation pamphlet. |
+| 02.5 | Miscellaneous | Originals that do not fit the stacks above, until a pile is large enough to split out. Magazine ads, newspaper ads, and brochures. Hull 02.5.1 is the 1969 HMAS Perth commendation pamphlet. |
 | 02.6 | Related links | Other yards, other archives, other people still keeping Great Lakes shipbuilding in view. Pointers, not our paper. |
 
 If photographs of family on the boats are numerous enough to confuse the work gallery, keep them in Family, not in Photographs.
@@ -75,8 +76,9 @@ If E awards grow into their own stack, insert them before Miscellaneous and shif
 | 01.2 | History by F. A. Swanson |
 | 01.3 | Yachts of the Auto Barons |
 | 01.4 | The Wartime History of the Offices of the Supervisor of Shipbuilding, USN |
+| 01.5 | Research, Development, and Construction of 57 Foot Plastic Boats |
 
-Add `01.4` and on for further written histories. Do not put clippings, the company magazine, testimony, or photo galleries here.
+Add `01.6` and on for further written histories. Do not put clippings, the company magazine, testimony, or photo galleries here.
 
 ---
 
@@ -110,10 +112,14 @@ Content is PHP data, not a database.
 - **`src/History/Swanson.php`** — Hull 01.2. Markdown in `content/history/swanson.md`.
 - **`src/History/YachtsAutoBarons.php`** — Hull 01.3. Polacsek; Tonnancour vol. 2. Markdown in `content/history/yachts-auto-barons.md`.
 - **`src/History/WartimeHistory.php`** — Hull 01.4. Capt. E. L. Patch, 27 May 1946. `parts()` is the slug lookup for `/history/wartime-history/{slug}`. `hero()` builds the part hero from that row. Preface and Parts I–II are markdown. Parts III–IX are `WartimeHistoryPartIII.php` through `WartimeHistoryPartIX.php`. Exhibits are listed on the landing and not posted yet.
+- **`src/History/PlasticBoats.php`** — Hull 01.5. James M. Anderson, reviewed by Thomas J. Defoe, Contract NObs-2799. Landing and Parts I–XII (`PlasticBoatsPartI.php` through `PlasticBoatsPartXII.php`) posted. Appendix B is the 41 plates in `PlasticBoatsAppendixB.php`. Appendix C is the 6 plates in `PlasticBoatsAppendixC.php`. Appendix D is the 18 plates in `PlasticBoatsAppendixD.php`.
 - **`src/Shipbuild/Archive.php`** — archive landing and rooms.
 - **`src/Shipbuild/Clippings.php`** — Hull 02.2. `pages()` is the slug lookup. Each row is the card, the hero, and a transcript in `content/clippings/{slug}.md`. `ClippingsController` has `index` and `show`.
 - **`src/Shipbuild/Miscellaneous.php`** — Hull 02.5. Miscellaneous listing.
 - **`src/Shipbuild/PerthCommendation.php`** — Hull 02.5.1. 1969 pamphlet. Posted.
+- **`src/Shipbuild/UpsideDownAdvertisement.php`** — Hull 02.5.2. Magazine advertisement, p. 68. Posted. Scan, then a transcript.
+- **`src/Shipbuild/Photographs.php`** — Hull 02.1. Work pictures. R/V Knorr, USS Lester (DE-1022), and USS Carpellotti (APD-136) are posted.
+- **`src/Shipbuild/ErnestRBreech.php`** — Hull 02.5.3. Naming ceremony pamphlet, Detroit, 11 April 1962. Posted. Small drawings inside the text pages were left out.
 - **`src/Shipbuild/FamilyPapers.php`** — Family room listings.
 - **`src/Shipbuild/InvestigationWarEffort.php`** — Harry Defoe’s 1943 hearings (02.4.1). Transcript body is in `Testimony606615.php` and `Testimony618628.php`.
 - Home copy is in `resources/views/home.blade.php`.

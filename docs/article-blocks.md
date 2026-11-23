@@ -58,6 +58,7 @@ Put `src` and `caption` on the block. Omit `src` (or leave it empty) to show the
     'placeholder' => 'Extract from the roll-over spread.',
     'id' => 'roll-over',     // optional
     'class' => 'narrow',     // optional extra class on <figure>
+    'link' => true,          // optional; the picture opens that file in a new tab
 ],
 ```
 
@@ -76,6 +77,23 @@ Two photographs per row from the Bootstrap `md` breakpoint; one column on smalle
 ],
 ```
 
+### Links
+
+A list of files. The page shows the label and opens the file in a new tab. It does not load the picture.
+
+```php
+[
+    'type' => 'links',
+    'items' => [
+        [
+            'href' => '/media/history/plastic-boats/appendix-page-102.jpg',
+            'text' => 'Test Data 3" x 16" panels Uniformly Distributed Load',
+            'pages' => '102',   // optional; prints as “p. 102”
+        ],
+    ],
+],
+```
+
 ### List
 
 Prefer this when the list is one unit in the source.
@@ -83,6 +101,7 @@ Prefer this when the list is one unit in the source.
 ```php
 [
     'type' => 'list',
+    'ordered' => true,       // optional; renders an ordered list
     'class' => 'columns-2',  // optional; Bootstrap row-cols, one column then two from md
     'items' => [
         '58-173\' Submarine Chasers',
@@ -96,6 +115,20 @@ Hearings may instead emit consecutive `li` blocks; the component wraps them in o
 ```php
 ['type' => 'li', 'text' => 'First item'],
 ['type' => 'li', 'text' => 'Second item'],
+```
+
+### Table
+
+Use this when the source is a table in the prose. A figure that is a data sheet stays a figure.
+
+```php
+[
+    'type' => 'table',
+    'headers' => ['Property', '1044 Laminate', 'Mil-P-17549'],
+    'rows' => [
+        ['Flexural Strength, PSI', '26,300', '20,000'],
+    ],
+],
 ```
 
 ### Note or quote

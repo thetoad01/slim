@@ -45,6 +45,7 @@ final class Articles
             $article('01.2', 'History', 'History by F. A. Swanson', 'A yard man’s account. The cadence of the ways as someone who walked them wrote it down.', 'swanson'),
             $article('01.3', 'History', 'Yachts of the Auto Barons', 'John F. Polacsek on Defoe-built yachts for Olds, Rands, Judson, and Kettering — floating mansions from the diesel years.', 'yachts-auto-barons'),
             WartimeHistory::article(),
+            PlasticBoats::article(),
         ];
     }
 
@@ -135,6 +136,22 @@ final class Articles
                 'primaryLabel' => 'Contents',
                 'data' => fn (): array => [
                     'html' => WartimeHistory::html(),
+                ],
+            ],
+            'plastic-boats' => [
+                'view' => 'history.plastic-boats',
+                'mark' => 'Contract NObs-2799',
+                'primaryHref' => '#contents',
+                'primaryLabel' => 'Contents',
+                'data' => fn (): array => [
+                    'article' => PlasticBoats::article(),
+                    'meta' => [
+                        ['label' => 'Author', 'text' => PlasticBoats::byline()],
+                        ['label' => 'Contract', 'text' => PlasticBoats::contract()],
+                    ],
+                    'about' => PlasticBoats::about(),
+                    'parts' => PlasticBoats::parts(),
+                    'appendicesNote' => PlasticBoats::appendicesNote(),
                 ],
             ],
         ];

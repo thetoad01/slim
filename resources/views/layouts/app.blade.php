@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/site.css">
+    @stack('styles')
 </head>
 <body class="{{ $theme ?? '' }}">
     <x-menu />
@@ -25,5 +26,6 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.min.js"></script>
+    @stack('scripts')
 </body>
 </html>

@@ -5,15 +5,19 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShipbuildController;
+use App\Http\Controllers\SitemapController;
 
 $app->get('/', [HomeController::class, 'index']);
+$app->get('/sitemap.xml', SitemapController::class);
 $app->post('/contact', [ContactController::class, 'store']);
 $app->get('/history', [HistoryController::class, 'index']);
 $app->get('/history/wartime-history/{slug}', [HistoryController::class, 'part']);
+$app->get('/history/plastic-boats/{slug}', [HistoryController::class, 'plasticBoatsPart']);
 $app->get('/history/{slug}', [HistoryController::class, 'show']);
 $app->get('/shipbuild', [ShipbuildController::class, 'index']);
 
 // Legacy archive URLs. Register before /shipbuild/{slug} so they do not 404.
+$app->redirect('/shipbuild/defoe_menu.html', '/shipbuild', 301);
 $app->redirect('/shipbuild/gallery', '/shipbuild/photographs', 301);
 $app->redirect('/shipbuild/inthenews', '/shipbuild/clippings', 301);
 $app->get('/shipbuild/inthenews/{slug}', function ($request, $response, array $args) {
@@ -30,6 +34,8 @@ $app->get('/shipbuild/inthenews/{slug}', function ($request, $response, array $a
 $app->redirect('/shipbuild/the-defoe-rollover', '/shipbuild/the-rollover', 301);
 $app->redirect('/shipbuild/links', '/shipbuild/related-links', 301);
 $app->redirect('/shipbuild/defoe-story', '/history/the-defoe-story', 301);
+$app->redirect('/shipbuild/TheDefoeStory.htm', '/history/the-defoe-story', 301);
+$app->redirect('/shipbuild/defoe-history01.htm', '/history/swanson', 301);
 $app->redirect('/shipbuild/swanson-history', '/history/swanson', 301);
 $app->redirect('/shipbuild/yachts-auto-barons', '/history/yachts-auto-barons', 301);
 $app->redirect('/shipbuild/offices-supervisor/wartime-history', '/history/wartime-history', 301);
@@ -64,6 +70,28 @@ $app->get('/shipbuild/family/{slug}', [ShipbuildController::class, 'paper']);
 $app->get('/shipbuild/family/{slug}/testimony/{pages}', [ShipbuildController::class, 'testimony']);
 $app->get('/shipbuild/clippings', [ClippingsController::class, 'index']);
 $app->get('/shipbuild/clippings/{slug}', [ClippingsController::class, 'show']);
+$app->redirect('/shipbuild/plastic-boats', '/history/plastic-boats', 301);
+$app->redirect('/shipbuild/plastic-boats/part-1', '/history/plastic-boats/part-i', 301);
+$app->redirect('/shipbuild/plastic-boats/part-2', '/history/plastic-boats/part-ii', 301);
+$app->redirect('/shipbuild/plastic-boats/part-3', '/history/plastic-boats/part-iii', 301);
+$app->redirect('/shipbuild/plastic-boats/part-4', '/history/plastic-boats/part-iv', 301);
+$app->redirect('/shipbuild/plastic-boats/part-5', '/history/plastic-boats/part-v', 301);
+$app->redirect('/shipbuild/plastic-boats/part-6', '/history/plastic-boats/part-vi', 301);
+$app->redirect('/shipbuild/plastic-boats/part-7', '/history/plastic-boats/part-vii', 301);
+$app->redirect('/shipbuild/plastic-boats/part-8', '/history/plastic-boats/part-viii', 301);
+$app->redirect('/shipbuild/plastic-boats/part-9', '/history/plastic-boats/part-ix', 301);
+$app->redirect('/shipbuild/plastic-boats/part-10', '/history/plastic-boats/part-x', 301);
+$app->redirect('/shipbuild/plastic-boats/part-11', '/history/plastic-boats/part-xi', 301);
+$app->redirect('/shipbuild/plastic-boats/part-12', '/history/plastic-boats/part-xii', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-b', '/history/plastic-boats/appendix-b', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-c', '/history/plastic-boats/appendix-c', 301);
+$app->redirect('/shipbuild/plastic-boats/appendix-d', '/history/plastic-boats/appendix-d', 301);
+$app->get('/shipbuild/plastic-boats/table-of-contents', function ($request, $response) {
+    return $response
+        ->withHeader('Location', '/history/plastic-boats#contents')
+        ->withStatus(301);
+});
 $app->redirect('/shipbuild/perth-commendation', '/shipbuild/miscellaneous/perth-commendation', 301);
+$app->redirect('/shipbuild/breech-naming', '/shipbuild/miscellaneous/ernest-r-breech-naming', 301);
 $app->get('/shipbuild/miscellaneous/{slug}', [ShipbuildController::class, 'miscellaneousItem']);
 $app->get('/shipbuild/{slug}', [ShipbuildController::class, 'show']);

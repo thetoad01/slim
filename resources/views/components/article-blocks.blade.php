@@ -42,8 +42,25 @@
                     @endforeach
                 </div>
             </div>
+        @elseif (($block['type'] ?? '') === 'links')
+            <ul class="article-list">
+                @foreach ($block['items'] as $item)
+                    <li>
+                        <a href="{{ $item['href'] }}" target="_blank" rel="noopener noreferrer">{{ $item['text'] }}</a>
+                        @if (! empty($item['pages']))
+                            <span class="tag">p. {{ $item['pages'] }}</span>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
         @elseif (($block['type'] ?? '') === 'list')
-            @if (($block['class'] ?? '') === 'columns-2')
+            @if (! empty($block['ordered']))
+                <ol class="article-list{{ empty($block['class']) ? '' : ' ' . $block['class'] }}">
+                    @foreach ($block['items'] as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
+                </ol>
+            @elseif (($block['class'] ?? '') === 'columns-2')
                 <ul class="article-list list-unstyled row row-cols-1 row-cols-md-2 gy-1 gx-4 ps-0">
                     @foreach ($block['items'] as $item)
                         <li class="col mb-0">{{ $item }}</li>
@@ -56,6 +73,29 @@
                     @endforeach
                 </ul>
             @endif
+        @elseif (($block['type'] ?? '') === 'table')
+            <div class="article-table">
+                <table>
+                    @if (! empty($block['headers']))
+                        <thead>
+                            <tr>
+                                @foreach ($block['headers'] as $header)
+                                    <th>{{ $header }}</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                    @endif
+                    <tbody>
+                        @foreach ($block['rows'] as $row)
+                            <tr>
+                                @foreach ($row as $cell)
+                                    <td>{{ $cell }}</td>
+                                @endforeach
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         @elseif (($block['type'] ?? '') === 'signatories')
             <div class="row gy-4 brochure-signatories">
                 @foreach ($block['items'] as $signatory)

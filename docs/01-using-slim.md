@@ -2,7 +2,7 @@
 
 This site is a small PHP app: Slim 4 for HTTP, Blade for templates, no database. PHP and Composer are the only tools you need.
 
-What the public pages are for — the yard, history articles, archive rooms, and hull numbers — is in [02-content.md](02-content.md). The URL map, including pages not built yet, is in [03-page-tree.md](03-page-tree.md).
+What the public pages are for — the yard, history articles, archive rooms, and hull numbers — is in [02-content.md](02-content.md). The URL map, including pages not built yet, is in [03-page-tree.md](03-page-tree.md). Apache is in [05-deploy.md](05-deploy.md).
 
 ## Serve the site locally
 

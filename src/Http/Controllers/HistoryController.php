@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\History\Articles;
+use App\History\PlasticBoats;
 use App\History\WartimeHistory;
 use App\Http\Controller;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -32,6 +33,25 @@ final class HistoryController extends Controller
             'title' => $page['hero']['title'] . ' · Defoe Shipbuilding',
             'hero' => $page['hero'],
             ...$page['data'],
+        ]);
+    }
+
+    public function plasticBoatsPart(Request $request, Response $response, array $args): Response
+    {
+        $article = Articles::findArticleBySlug('plastic-boats');
+        $part = PlasticBoats::findPart((string) $args['slug']);
+
+        if ($article === null || $part === null || ! $part['posted']) {
+            throw new HttpNotFoundException($request);
+        }
+
+        $hero = PlasticBoats::hero($article, $part);
+
+        return $this->render($response, 'history.wartime-history-part', [
+            'title' => $hero['title'] . ' · Defoe Shipbuilding',
+            'hero' => $hero,
+            'blocks' => PlasticBoats::blocksFor($part['slug']),
+            'continue' => PlasticBoats::continueAfter($part['slug']),
         ]);
     }
 

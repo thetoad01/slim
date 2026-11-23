@@ -211,12 +211,21 @@ body {
     box-shadow: none;
 }
 
+.article-figure a {
+    display: block;
+    line-height: 0;
+}
+
 .article-figure img {
     display: block;
     width: 100%;
     height: auto;
     border: 1px solid var(--line);
 }
+
+.article-figure.narrow { max-width: 16rem; }
+
+.photo-grid .article-figure { max-width: none; margin: 0; }
 
 .article-figure figcaption { margin-top: 0.65rem; }
 
@@ -256,6 +265,27 @@ body {
 }
 
 .article-list li { margin-bottom: 0.65rem; }
+
+.article-table {
+    max-width: 40rem;
+    margin: 0 0 1.5rem;
+    overflow-x: auto;
+}
+
+.article-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.article-table th,
+.article-table td {
+    padding: 0.45rem 0.75rem 0.45rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-table th { font-weight: 600; }
 
 .brochure-signatories {
     margin: 1.75rem 0 2.5rem;
